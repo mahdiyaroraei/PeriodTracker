@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CircleViewController: UIViewController {
+class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
     
     var points : [CGPoint] = []
     var selectDayLayer:CAShapeLayer?
@@ -24,6 +24,15 @@ class CircleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if selectDayLayer != nil {
+            selectDayLayer?.removeFromSuperlayer()
+            textLayer?.removeFromSuperlayer()
+        }
         
         setupDate()
         drawCircleBasic()
@@ -40,6 +49,21 @@ class CircleViewController: UIViewController {
         difference = difference % periodDistance
         
         beginPeriodDate = Calendar.current.date(byAdding: .day, value: -difference, to: Date())
+        
+        dayLabel.isUserInteractionEnabled = true
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self, action: #selector(dayTapped))
+        dayLabel.addGestureRecognizer(tap)
+        tap.delegate = self
+    }
+    
+    func dayTapped(sender:UITapGestureRecognizer) {
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsDetailsVCID") as? UIViewController
+        {
+            
+//            vc.newsObj = newsObj
+            present(vc, animated: true, completion: nil)
+        }
     }
     
     func setupPoints() {

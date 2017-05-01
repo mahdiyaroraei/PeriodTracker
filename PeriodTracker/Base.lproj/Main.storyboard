@@ -212,7 +212,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Uq-PC-Mag" id="NcA-xR-vtD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -245,6 +245,28 @@
             </objects>
             <point key="canvasLocation" x="-535" y="1087"/>
         </scene>
+        <!--Log Period-->
+        <scene sceneID="OtR-b9-Y1k">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="myC-d7-ZXg" customClass="LogPeriodViewController" customModule="Period_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Txr-4m-zaC"/>
+                        <viewControllerLayoutGuide type="bottom" id="sqB-aN-hKx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cSd-SP-Kon">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Log Period" id="3Dh-yr-Lop"/>
+                    <connections>
+                        <outlet property="navItem" destination="3Dh-yr-Lop" id="uyS-jt-5K3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dqa-A9-S2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="642" y="2008"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HHd-h9-Eth">
             <objects>
@@ -270,7 +292,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="792-HP-ZxA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Calendar" id="o9k-Hx-9As"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gGQ-5J-q4n">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gGQ-5J-q4n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -285,6 +307,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykB-Wm-gUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-535" y="-1181"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lui-BR-POP">
+            <objects>
+                <navigationController storyboardIdentifier="NewsDetailsVCID" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="atD-l6-myK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="baQ-iY-erP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="myC-d7-ZXg" kind="relationship" relationship="rootViewController" id="kO4-tY-bAb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zzz-UF-ykU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-535" y="2009"/>
         </scene>
     </scenes>
 </document>

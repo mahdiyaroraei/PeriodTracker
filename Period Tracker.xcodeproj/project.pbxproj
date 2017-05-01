@@ -14,6 +14,7 @@
 		5501E0AB1EA7399400E24F63 /* IRANSans(FaNum).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5501E0A61EA7399400E24F63 /* IRANSans(FaNum).ttf */; };
 		55132DDB1EAF29B100003580 /* SimpleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55132DDA1EAF29B100003580 /* SimpleModel.swift */; };
 		555BF66F1EB75D920035A9BD /* PeriodTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555BF66E1EB75D920035A9BD /* PeriodTime.swift */; };
+		555BF6711EB78CBF0035A9BD /* LogPeriodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555BF6701EB78CBF0035A9BD /* LogPeriodViewController.swift */; };
 		556FA0AC1EAF26B6000798A9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 556FA0AA1EAF26B6000798A9 /* Realm.framework */; };
 		556FA0AD1EAF26B6000798A9 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 556FA0AA1EAF26B6000798A9 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		556FA0AE1EAF26B6000798A9 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 556FA0AB1EAF26B6000798A9 /* RealmSwift.framework */; };
@@ -50,6 +51,7 @@
 		5501E0A61EA7399400E24F63 /* IRANSans(FaNum).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSans(FaNum).ttf"; path = "../../Google Drive/IRANSans Fonts/IRANSans4/IRANSans4/Farsi_numerals_(Non Standard)/IRANSans(FaNum).ttf"; sourceTree = "<group>"; };
 		55132DDA1EAF29B100003580 /* SimpleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleModel.swift; sourceTree = "<group>"; };
 		555BF66E1EB75D920035A9BD /* PeriodTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodTime.swift; sourceTree = "<group>"; };
+		555BF6701EB78CBF0035A9BD /* LogPeriodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogPeriodViewController.swift; sourceTree = "<group>"; };
 		556FA0AA1EAF26B6000798A9 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		556FA0AB1EAF26B6000798A9 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		55C17D021E7C728300B844F2 /* ImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				55C17D021E7C728300B844F2 /* ImagesViewController.swift */,
 				55D1EC981E864C5D005C1CA3 /* CircleViewController.swift */,
+				555BF6701EB78CBF0035A9BD /* LogPeriodViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				555BF66F1EB75D920035A9BD /* PeriodTime.swift in Sources */,
 				55D1EC991E864C5D005C1CA3 /* CircleViewController.swift in Sources */,
 				55F839321E7D40D600A390A4 /* DayViewCell.swift in Sources */,
+				555BF6711EB78CBF0035A9BD /* LogPeriodViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
