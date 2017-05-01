@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bXp-6x-Sff">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="IRANSans(FaNum).ttf">
+            <string>IRANSansFaNum</string>
+        </array>
+        <array key="IRANSans(FaNum)_Bold.ttf">
+            <string>IRANSansFaNum-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="eyW-lj-ts9">
+            <objects>
+                <viewController id="h0F-Ht-hdm" customClass="ImagesViewController" customModule="Period_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tzj-47-xBk"/>
+                        <viewControllerLayoutGuide type="bottom" id="h8x-iq-qEg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3jL-ug-kJB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pij-3R-Gem">
+                                <rect key="frame" x="16" y="72" width="342" height="588"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="Jym-Oc-3s8">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellIdentifire" id="8cO-c5-6ms" customClass="DayViewCell" customModule="Period_Tracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOn-bR-sHR">
+                                                    <rect key="frame" x="4" y="15" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="16"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="dayOfMonthLabel" destination="aOn-bR-sHR" id="L2s-mt-R9a"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="delegate" destination="h0F-Ht-hdm" id="pTQ-Ur-MY3"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYe-Ie-eFM">
+                                <rect key="frame" x="91" y="580" width="193" height="30"/>
+                                <state key="normal" title="Load Defaults"/>
+                                <connections>
+                                    <action selector="clearSettings:" destination="h0F-Ht-hdm" eventType="touchUpInside" id="aWG-iL-t5x"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bnp-by-C9i">
+                                <rect key="frame" x="0.0" y="64" width="375" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="شروع: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzZ-IZ-vyq">
+                                        <rect key="frame" x="340" y="0.0" width="27" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="10"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="طول مدت: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62B-PG-TzN">
+                                        <rect key="frame" x="323" y="22" width="44" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="10"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6Q-Jo-9Bw">
+                                        <rect key="frame" x="129" y="22" width="88" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrJ-L2-a07">
+                                        <rect key="frame" x="157" y="43" width="60" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8B-7P-fkz">
+                                        <rect key="frame" x="0.0" y="0.0" width="217" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="فاصله دوره ها: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foz-SC-S8s">
+                                        <rect key="frame" x="308" y="43" width="59" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="10"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pij-3R-Gem" firstAttribute="top" secondItem="tzj-47-xBk" secondAttribute="bottom" constant="8" id="KIW-m0-fvT"/>
+                            <constraint firstItem="LYe-Ie-eFM" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leadingMargin" constant="75" id="MTu-g6-3jo"/>
+                            <constraint firstItem="h8x-iq-qEg" firstAttribute="top" secondItem="LYe-Ie-eFM" secondAttribute="bottom" constant="8" id="aUa-1R-WBU"/>
+                            <constraint firstItem="Pij-3R-Gem" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leadingMargin" id="afg-FP-ULC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LYe-Ie-eFM" secondAttribute="trailing" constant="75" id="bwu-s8-u2j"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Pij-3R-Gem" secondAttribute="bottom" constant="7" id="hdj-TF-MLt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pij-3R-Gem" secondAttribute="trailing" constant="1" id="qVG-qW-e40"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="ohy-aj-S58"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Pij-3R-Gem" id="mxC-LI-gs4"/>
+                        <outlet property="distanceLabel" destination="jrJ-L2-a07" id="fl7-Cx-7Wj"/>
+                        <outlet property="lengthLabel" destination="Z6Q-Jo-9Bw" id="20R-U0-NL8"/>
+                        <outlet property="navItem" destination="ohy-aj-S58" id="IYf-th-kdf"/>
+                        <outlet property="startLabel" destination="Z8B-7P-fkz" id="Ins-7d-2iD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zv9-pE-QcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044" y="-1182.4587706146926"/>
+        </scene>
+        <!--Circle-->
+        <scene sceneID="Bmo-lj-OFf">
+            <objects>
+                <navigationController id="8X1-9u-hUJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Circle" id="PEk-Q6-hjY"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="KRp-wt-wq0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="17"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="m3z-f4-RsG" kind="relationship" relationship="rootViewController" id="8jf-K2-rpL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OMz-xy-HvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-535" y="0.0"/>
+        </scene>
+        <!--جزییات دوره-->
+        <scene sceneID="9CP-YX-OmF">
+            <objects>
+                <viewController id="m3z-f4-RsG" customClass="CircleViewController" customModule="Period_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IWw-2M-of1"/>
+                        <viewControllerLayoutGuide type="bottom" id="gd4-D9-CD2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mwr-Ne-ucM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="۳۱-اردیبهشت-۹۶" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcL-4K-30U">
+                                <rect key="frame" x="108" y="323" width="160" height="21"/>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RcL-4K-30U" firstAttribute="centerX" secondItem="Mwr-Ne-ucM" secondAttribute="centerX" id="Ds0-2h-TGd"/>
+                            <constraint firstItem="RcL-4K-30U" firstAttribute="centerY" secondItem="Mwr-Ne-ucM" secondAttribute="centerY" id="eRG-HC-7sQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="جزییات دوره" id="igF-NP-KuO"/>
+                    <connections>
+                        <outlet property="dayLabel" destination="RcL-4K-30U" id="Oj5-3y-Idk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="95H-TV-YAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044" y="-0.44977511244377816"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="eQA-qi-qRv">
+            <objects>
+                <tableViewController id="ROd-gn-ZUR" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SoK-ay-5aa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2Uq-PC-Mag">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Uq-PC-Mag" id="NcA-xR-vtD">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ROd-gn-ZUR" id="R12-h2-VCq"/>
+                            <outlet property="delegate" destination="ROd-gn-ZUR" id="IF1-ZJ-GDq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="YdV-G8-Kqe"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DN9-T6-aen" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044" y="1086"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="7GV-hz-7dr">
+            <objects>
+                <navigationController id="jqa-bE-MZ7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" id="osy-P8-4rw"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Q9a-Md-3pA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ROd-gn-ZUR" kind="relationship" relationship="rootViewController" id="8pr-od-xID"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EFq-Rk-eAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-535" y="1087"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="HHd-h9-Eth">
+            <objects>
+                <tabBarController id="bXp-6x-Sff" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ZKM-Tp-14b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="792-HP-ZxA" kind="relationship" relationship="viewControllers" id="rne-Uq-RF9"/>
+                        <segue destination="8X1-9u-hUJ" kind="relationship" relationship="viewControllers" id="ZIE-57-yaf"/>
+                        <segue destination="jqa-bE-MZ7" kind="relationship" relationship="viewControllers" id="UmU-r2-T1C"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vav-8i-Q4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1860" y="1"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="WJi-bT-U84">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="792-HP-ZxA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calendar" id="o9k-Hx-9As"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gGQ-5J-q4n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="17"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="h0F-Ht-hdm" kind="relationship" relationship="rootViewController" id="NP5-3r-jj7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ykB-Wm-gUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-535" y="-1181"/>
+        </scene>
+    </scenes>
+</document>
