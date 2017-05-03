@@ -13,11 +13,11 @@
 		5501E0AA1EA7399400E24F63 /* IRANSans(FaNum)_UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5501E0A51EA7399400E24F63 /* IRANSans(FaNum)_UltraLight.ttf */; };
 		5501E0AB1EA7399400E24F63 /* IRANSans(FaNum).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5501E0A61EA7399400E24F63 /* IRANSans(FaNum).ttf */; };
 		5509361A1EBA1AA40015C251 /* PeriodNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936191EBA1AA40015C251 /* PeriodNoteModel.swift */; };
+		555ACE171EBA356A00E3D5F1 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 556FA0AA1EAF26B6000798A9 /* Realm.framework */; };
+		555ACE181EBA356A00E3D5F1 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 556FA0AA1EAF26B6000798A9 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		555ACE191EBA356A00E3D5F1 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 556FA0AB1EAF26B6000798A9 /* RealmSwift.framework */; };
+		555ACE1A1EBA356A00E3D5F1 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 556FA0AB1EAF26B6000798A9 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		555BF6711EB78CBF0035A9BD /* LogPeriodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555BF6701EB78CBF0035A9BD /* LogPeriodViewController.swift */; };
-		556FA0AC1EAF26B6000798A9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 556FA0AA1EAF26B6000798A9 /* Realm.framework */; };
-		556FA0AD1EAF26B6000798A9 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 556FA0AA1EAF26B6000798A9 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		556FA0AE1EAF26B6000798A9 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 556FA0AB1EAF26B6000798A9 /* RealmSwift.framework */; };
-		556FA0AF1EAF26B6000798A9 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 556FA0AB1EAF26B6000798A9 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55C17D031E7C728300B844F2 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C17D021E7C728300B844F2 /* ImagesViewController.swift */; };
 		55CF92FF1E771B7800BC772B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF92FE1E771B7800BC772B /* AppDelegate.swift */; };
 		55CF93041E771B7800BC772B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55CF93021E771B7800BC772B /* Main.storyboard */; };
@@ -28,14 +28,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		556FA0B01EAF26B6000798A9 /* Embed Frameworks */ = {
+		555ACE1B1EBA356A00E3D5F1 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				556FA0AF1EAF26B6000798A9 /* RealmSwift.framework in Embed Frameworks */,
-				556FA0AD1EAF26B6000798A9 /* Realm.framework in Embed Frameworks */,
+				555ACE1A1EBA356A00E3D5F1 /* RealmSwift.framework in Embed Frameworks */,
+				555ACE181EBA356A00E3D5F1 /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,8 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				556FA0AE1EAF26B6000798A9 /* RealmSwift.framework in Frameworks */,
-				556FA0AC1EAF26B6000798A9 /* Realm.framework in Frameworks */,
+				555ACE191EBA356A00E3D5F1 /* RealmSwift.framework in Frameworks */,
+				555ACE171EBA356A00E3D5F1 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,8 +158,8 @@
 				55CF92F71E771B7800BC772B /* Sources */,
 				55CF92F81E771B7800BC772B /* Frameworks */,
 				55CF92F91E771B7800BC772B /* Resources */,
-				556FA0B01EAF26B6000798A9 /* Embed Frameworks */,
 				556FA0B11EAF2899000798A9 /* ShellScript */,
+				555ACE1B1EBA356A00E3D5F1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
