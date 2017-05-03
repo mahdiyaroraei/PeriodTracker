@@ -19,6 +19,8 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
     let periodLength = (UserDefaults.standard.integer(forKey: "SELECT_PERIOD_LENGHT"))
     var angelUnit : Double?
     let MONTH : [String] = ["فروردین" , "اردیبهشت" , "خرداد" , "تیر" , "مرداد" , "شهریور" , "مهر" , "آبان" , "آذر" , "دی" , "بهمن" , "اسفند"]
+    var timestamp: Double! = 0
+    var saveNoteState = false
 
     @IBOutlet weak var dayLabel: UILabel!
     
@@ -29,18 +31,23 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if selectDayLayer != nil {
-            selectDayLayer?.removeFromSuperlayer()
-            textLayer?.removeFromSuperlayer()
-        }
+        if !saveNoteState {
+            
+            if selectDayLayer != nil {
+                selectDayLayer?.removeFromSuperlayer()
+                textLayer?.removeFromSuperlayer()
+            }
         
-        setupDate()
-        drawCircleBasic()
-        drawCircleCloud()
-        drawCirclePeriod()
-        drawCircleFertile()
-        setupGestureView()
-        setupPoints()
+            setupDate()
+            drawCircleBasic()
+            drawCircleCloud()
+            drawCirclePeriod()
+            drawCircleFertile()
+            setupGestureView()
+            setupPoints()
+            selectDay(sender: points[0])
+            saveNoteState = false
+        }
     }
     
     func setupDate() {
@@ -58,12 +65,14 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
     }
     
     func dayTapped(sender:UITapGestureRecognizer) {
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsDetailsVCID") as? UIViewController
-        {
-            
-//            vc.newsObj = newsObj
-            present(vc, animated: true, completion: nil)
-        }
+        saveNoteState = true
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "NewsDetailsVCID")
+        
+        LogPeriodViewController.timestamp = self.timestamp
+        
+        present(destinationVC, animated: true, completion: nil)
+        
     }
     
     func setupPoints() {
@@ -86,11 +95,15 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
     }
     
     func onViewTouch(sender:UITapGestureRecognizer) {
+        selectDay(sender: sender.location(in: view))
+    }
+    
+    func selectDay(sender:CGPoint) {
         var selectedPoint : CGPoint = points[0]
         var day = 1
         var selectedDay = 1
         for point in points {
-            if distance(a: point, b: sender.location(in: view)) < distance(a: selectedPoint, b: sender.location(in: view)) {
+            if distance(a: point, b: sender) < distance(a: selectedPoint, b: sender) {
                 selectedPoint = point
                 selectedDay = day
             }
@@ -121,6 +134,7 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
         
         let date = Calendar.current.date(byAdding: .day, value: selectedDay - 1 , to: beginPeriodDate!)
         let dateComponents = Calendar(identifier: .persian).dateComponents([.year , .month , .day], from: date!)
+        timestamp = Calendar.current.startOfDay(for: date!).timeIntervalSince1970
         dayLabel.text = "\(Int (dateComponents.year!)) - \(MONTH[dateComponents.month! - 1]) - \(Int (dateComponents.day!))"
     }
     
