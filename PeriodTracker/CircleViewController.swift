@@ -13,16 +13,20 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
     var points : [CGPoint] = []
     var selectDayLayer:CAShapeLayer?
     var textLayer:CATextLayer?
-    let startPeriodDate : Date = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: "period_begin_date"))
+    var startPeriodDate : Date = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: "period_begin_date"))
     var beginPeriodDate : Date?
-    var periodDistance = UserDefaults.standard.integer(forKey: "SELECT_PERIOD_DISTANCE")
-    var periodLength = (UserDefaults.standard.integer(forKey: "SELECT_PERIOD_LENGHT"))
+    var periodDistance : Int!
+    var periodLength : Int!
     var angelUnit : Double?
     let MONTH : [String] = ["فروردین" , "اردیبهشت" , "خرداد" , "تیر" , "مرداد" , "شهریور" , "مهر" , "آبان" , "آذر" , "دی" , "بهمن" , "اسفند"]
     var timestamp: Double! = 0
     var saveNoteState = false
 
     @IBOutlet weak var dayLabel: UILabel!
+    
+    let periodLayer = CAShapeLayer()
+    let fertileLayer = CAShapeLayer()
+    let cloudLayer = CAShapeLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +37,16 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
         
         periodDistance = UserDefaults.standard.integer(forKey: "SELECT_PERIOD_DISTANCE")
         periodLength = (UserDefaults.standard.integer(forKey: "SELECT_PERIOD_LENGHT"))
+        startPeriodDate = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: "period_begin_date"))
         
         if !saveNoteState {
             
             if selectDayLayer != nil {
                 selectDayLayer?.removeFromSuperlayer()
                 textLayer?.removeFromSuperlayer()
+                periodLayer.removeFromSuperlayer()
+                fertileLayer.removeFromSuperlayer()
+                cloudLayer.removeFromSuperlayer()
             }
         
             setupDate()
@@ -56,7 +64,7 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
     func setupDate() {
         var difference = Calendar.current.dateComponents([.day], from: startPeriodDate, to: Date()).day ?? 0
         
-        difference = difference % periodDistance
+        difference = difference % periodDistance!
         
         beginPeriodDate = Calendar.current.date(byAdding: .day, value: -difference, to: Date())
         
@@ -173,15 +181,14 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
         
         let circlePath = UIBezierPath(arcCenter: CGPoint(x: centerPoint.x,y: centerPoint.y), radius: radius, startAngle: CGFloat(M_PI * 1.5), endAngle:CGFloat(M_PI * 1.5 + (Double (periodLength - 1) * angelUnit!)), clockwise: true)
         
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = circlePath.cgPath
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor.red.cgColor
-        shapeLayer.lineWidth = 25.0
-        shapeLayer.lineCap = kCALineCapRound
-        shapeLayer.contents = UIImage(named: "cloud")?.cgImage
+        periodLayer.path = circlePath.cgPath
+        periodLayer.fillColor = UIColor.clear.cgColor
+        periodLayer.strokeColor = UIColor.red.cgColor
+        periodLayer.lineWidth = 25.0
+        periodLayer.lineCap = kCALineCapRound
+        periodLayer.contents = UIImage(named: "cloud")?.cgImage
         
-        view.layer.addSublayer(shapeLayer)
+        view.layer.addSublayer(periodLayer)
     }
     
     func drawCircleFertile() {
@@ -190,15 +197,14 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
         
         let circlePath = UIBezierPath(arcCenter: CGPoint(x: centerPoint.x,y: centerPoint.y), radius: radius, startAngle: CGFloat(M_PI * 0.3), endAngle:CGFloat(M_PI * 0.7), clockwise: true)
         
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = circlePath.cgPath
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor.cyan.cgColor
-        shapeLayer.lineWidth = 25.0
-        shapeLayer.lineCap = kCALineCapRound
-        shapeLayer.contents = UIImage(named: "cloud")?.cgImage
+        fertileLayer.path = circlePath.cgPath
+        fertileLayer.fillColor = UIColor.clear.cgColor
+        fertileLayer.strokeColor = UIColor.cyan.cgColor
+        fertileLayer.lineWidth = 25.0
+        fertileLayer.lineCap = kCALineCapRound
+        fertileLayer.contents = UIImage(named: "cloud")?.cgImage
         
-        view.layer.addSublayer(shapeLayer)
+        view.layer.addSublayer(fertileLayer)
     }
     
     func drawCircleCloud() {
@@ -208,15 +214,14 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
         
         let circlePath = UIBezierPath(arcCenter: CGPoint(x: centerPoint.x,y: centerPoint.y), radius: radius, startAngle: CGFloat(M_PI * 1.05), endAngle:CGFloat(M_PI * 1.42), clockwise: true)
         
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = circlePath.cgPath
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor.blue.cgColor
-        shapeLayer.lineWidth = 25.0
-        shapeLayer.lineCap = kCALineCapRound
-        shapeLayer.contents = UIImage(named: "cloud")?.cgImage
+        cloudLayer.path = circlePath.cgPath
+        cloudLayer.fillColor = UIColor.clear.cgColor
+        cloudLayer.strokeColor = UIColor.blue.cgColor
+        cloudLayer.lineWidth = 25.0
+        cloudLayer.lineCap = kCALineCapRound
+        cloudLayer.contents = UIImage(named: "cloud")?.cgImage
         
-        view.layer.addSublayer(shapeLayer)
+        view.layer.addSublayer(cloudLayer)
         
         let a = M_PI / 25
         

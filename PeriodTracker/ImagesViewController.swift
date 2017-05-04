@@ -27,6 +27,8 @@ UIPickerViewDelegate , UIPickerViewDataSource{
         UserDefaults.standard.set(0, forKey: "SELECT_PERIOD_DISTANCE")
         
         setupUserSavedData()
+        dayOfMonth = 0
+        collectionView.reloadData()
     }
     
     let identifier = "CellIdentifire"
