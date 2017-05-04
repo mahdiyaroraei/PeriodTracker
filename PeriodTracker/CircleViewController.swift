@@ -15,8 +15,8 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
     var textLayer:CATextLayer?
     let startPeriodDate : Date = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: "period_begin_date"))
     var beginPeriodDate : Date?
-    let periodDistance = UserDefaults.standard.integer(forKey: "SELECT_PERIOD_DISTANCE")
-    let periodLength = (UserDefaults.standard.integer(forKey: "SELECT_PERIOD_LENGHT"))
+    var periodDistance = UserDefaults.standard.integer(forKey: "SELECT_PERIOD_DISTANCE")
+    var periodLength = (UserDefaults.standard.integer(forKey: "SELECT_PERIOD_LENGHT"))
     var angelUnit : Double?
     let MONTH : [String] = ["فروردین" , "اردیبهشت" , "خرداد" , "تیر" , "مرداد" , "شهریور" , "مهر" , "آبان" , "آذر" , "دی" , "بهمن" , "اسفند"]
     var timestamp: Double! = 0
@@ -30,6 +30,9 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        periodDistance = UserDefaults.standard.integer(forKey: "SELECT_PERIOD_DISTANCE")
+        periodLength = (UserDefaults.standard.integer(forKey: "SELECT_PERIOD_LENGHT"))
         
         if !saveNoteState {
             

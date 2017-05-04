@@ -19,6 +19,8 @@ class LogPeriodViewController: UIViewController {
     
     let realm = try! Realm()
     
+    var update : Bool? = false
+    
     @IBAction func saveNote(_ sender: Any) {
         
         let noteModel : PeriodNoteModel = PeriodNoteModel()
@@ -26,7 +28,7 @@ class LogPeriodViewController: UIViewController {
         noteModel.note = noteTextView.text
         
         try! realm.write {
-            realm.add(noteModel)
+            realm.add(noteModel , update: update!)
         }
         
         done()
@@ -62,6 +64,10 @@ class LogPeriodViewController: UIViewController {
     func fetchSavedNote() {
         
         let note = realm.objects(PeriodNoteModel.self).filter("timestamp = \(LogPeriodViewController.timestamp!)")
+        
+        if note.count > 0 {
+            update = true
+        }
         
         noteTextView.text = note.first?.note
     }

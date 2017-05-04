@@ -172,6 +172,14 @@ UIPickerViewDelegate , UIPickerViewDataSource{
             alert.addAction(UIAlertAction(title: "بله", style: UIAlertActionStyle.default, handler: {action in self.setupBeginPeriod(date: cell.date!)}))
             alert.addAction(UIAlertAction(title: "خیر", style: UIAlertActionStyle.cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
+        } else{
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let destinationVC = storyboard.instantiateViewController(withIdentifier: "NewsDetailsVCID")
+            
+            LogPeriodViewController.timestamp = Calendar.current.startOfDay(for: cell.date!).timeIntervalSince1970
+            
+            present(destinationVC, animated: true, completion: nil)
         }
     }
     
