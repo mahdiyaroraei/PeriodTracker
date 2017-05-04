@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bXp-6x-Sff">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bXp-6x-Sff">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +20,7 @@
         <!--Title-->
         <scene sceneID="eyW-lj-ts9">
             <objects>
-                <viewController id="h0F-Ht-hdm" customClass="ImagesViewController" customModule="Period_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h0F-Ht-hdm" customClass="ImagesViewController" customModule="PeriodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tzj-47-xBk"/>
                         <viewControllerLayoutGuide type="bottom" id="h8x-iq-qEg"/>
@@ -39,7 +39,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellIdentifire" id="8cO-c5-6ms" customClass="DayViewCell" customModule="Period_Tracker" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellIdentifire" id="8cO-c5-6ms" customClass="DayViewCell" customModule="PeriodTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -168,7 +168,7 @@
         <!--جزییات دوره-->
         <scene sceneID="9CP-YX-OmF">
             <objects>
-                <viewController id="m3z-f4-RsG" customClass="CircleViewController" customModule="Period_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="m3z-f4-RsG" customClass="CircleViewController" customModule="PeriodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IWw-2M-of1"/>
                         <viewControllerLayoutGuide type="bottom" id="gd4-D9-CD2"/>
@@ -212,7 +212,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Uq-PC-Mag" id="NcA-xR-vtD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -248,7 +248,7 @@
         <!--Log Period-->
         <scene sceneID="OtR-b9-Y1k">
             <objects>
-                <viewController storyboardIdentifier="LogPeriodVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="myC-d7-ZXg" customClass="LogPeriodViewController" customModule="Period_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogPeriodVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="myC-d7-ZXg" customClass="LogPeriodViewController" customModule="PeriodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Txr-4m-zaC"/>
                         <viewControllerLayoutGuide type="bottom" id="sqB-aN-hKx"/>
@@ -271,6 +271,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="14"/>
                                 <state key="normal" title="ذخیره"/>
+                                <connections>
+                                    <action selector="saveNote:" destination="myC-d7-ZXg" eventType="touchUpInside" id="yh7-Td-zQx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="توضیحات را در باکس زیر وارد کنید" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-pS-ciR">
                                 <rect key="frame" x="16" y="98" width="343" height="54"/>
@@ -329,7 +332,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="792-HP-ZxA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Calendar" id="o9k-Hx-9As"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gGQ-5J-q4n">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gGQ-5J-q4n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">

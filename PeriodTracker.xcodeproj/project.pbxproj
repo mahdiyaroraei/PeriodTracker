@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5501E0A71EA7399400E24F63 /* IRANSans(FaNum)_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5501E0A21EA7399400E24F63 /* IRANSans(FaNum)_Bold.ttf */; };
+		5501E0A81EA7399400E24F63 /* IRANSans(FaNum)_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5501E0A31EA7399400E24F63 /* IRANSans(FaNum)_Light.ttf */; };
+		5501E0A91EA7399400E24F63 /* IRANSans(FaNum)_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5501E0A41EA7399400E24F63 /* IRANSans(FaNum)_Medium.ttf */; };
+		5501E0AA1EA7399400E24F63 /* IRANSans(FaNum)_UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5501E0A51EA7399400E24F63 /* IRANSans(FaNum)_UltraLight.ttf */; };
+		5501E0AB1EA7399400E24F63 /* IRANSans(FaNum).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5501E0A61EA7399400E24F63 /* IRANSans(FaNum).ttf */; };
+		5509361A1EBA1AA40015C251 /* PeriodNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936191EBA1AA40015C251 /* PeriodNoteModel.swift */; };
+		555BF6711EB78CBF0035A9BD /* LogPeriodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555BF6701EB78CBF0035A9BD /* LogPeriodViewController.swift */; };
+		558BC9161EBAE610000D66FF /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558BC9141EBAE610000D66FF /* Realm.framework */; };
+		558BC9171EBAE610000D66FF /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 558BC9141EBAE610000D66FF /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		558BC9181EBAE610000D66FF /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558BC9151EBAE610000D66FF /* RealmSwift.framework */; };
+		558BC9191EBAE610000D66FF /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 558BC9151EBAE610000D66FF /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55C17D031E7C728300B844F2 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C17D021E7C728300B844F2 /* ImagesViewController.swift */; };
+		55CF92FF1E771B7800BC772B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF92FE1E771B7800BC772B /* AppDelegate.swift */; };
+		55CF93041E771B7800BC772B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55CF93021E771B7800BC772B /* Main.storyboard */; };
+		55CF93061E771B7800BC772B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CF93051E771B7800BC772B /* Assets.xcassets */; };
+		55CF93091E771B7800BC772B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55CF93071E771B7800BC772B /* LaunchScreen.storyboard */; };
+		55D1EC991E864C5D005C1CA3 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1EC981E864C5D005C1CA3 /* CircleViewController.swift */; };
+		55F839321E7D40D600A390A4 /* DayViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F839311E7D40D600A390A4 /* DayViewCell.swift */; };
+		65F92CCC14625C732029E09E /* Pods_PeriodTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0219139CAF7B2E0FFEC3130C /* Pods_PeriodTracker.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55C97A7E1EBA3B5D005DEF4D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				558BC9191EBAE610000D66FF /* RealmSwift.framework in Embed Frameworks */,
+				558BC9171EBAE610000D66FF /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0219139CAF7B2E0FFEC3130C /* Pods_PeriodTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeriodTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FA8BF60A00C0B39CDC7AFD1 /* Pods-Period Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Period Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Period Tracker/Pods-Period Tracker.debug.xcconfig"; sourceTree = "<group>"; };
+		11300E77D34198A1845EA991 /* Pods-PeriodTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeriodTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-PeriodTracker/Pods-PeriodTracker.release.xcconfig"; sourceTree = "<group>"; };
+		5501E0A21EA7399400E24F63 /* IRANSans(FaNum)_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSans(FaNum)_Bold.ttf"; path = "../../Google Drive/IRANSans Fonts/IRANSans4/IRANSans4/Farsi_numerals_(Non Standard)/IRANSans(FaNum)_Bold.ttf"; sourceTree = "<group>"; };
+		5501E0A31EA7399400E24F63 /* IRANSans(FaNum)_Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSans(FaNum)_Light.ttf"; path = "../../Google Drive/IRANSans Fonts/IRANSans4/IRANSans4/Farsi_numerals_(Non Standard)/IRANSans(FaNum)_Light.ttf"; sourceTree = "<group>"; };
+		5501E0A41EA7399400E24F63 /* IRANSans(FaNum)_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSans(FaNum)_Medium.ttf"; path = "../../Google Drive/IRANSans Fonts/IRANSans4/IRANSans4/Farsi_numerals_(Non Standard)/IRANSans(FaNum)_Medium.ttf"; sourceTree = "<group>"; };
+		5501E0A51EA7399400E24F63 /* IRANSans(FaNum)_UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSans(FaNum)_UltraLight.ttf"; path = "../../Google Drive/IRANSans Fonts/IRANSans4/IRANSans4/Farsi_numerals_(Non Standard)/IRANSans(FaNum)_UltraLight.ttf"; sourceTree = "<group>"; };
+		5501E0A61EA7399400E24F63 /* IRANSans(FaNum).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSans(FaNum).ttf"; path = "../../Google Drive/IRANSans Fonts/IRANSans4/IRANSans4/Farsi_numerals_(Non Standard)/IRANSans(FaNum).ttf"; sourceTree = "<group>"; };
+		550936191EBA1AA40015C251 /* PeriodNoteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodNoteModel.swift; sourceTree = "<group>"; };
+		555BF6701EB78CBF0035A9BD /* LogPeriodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogPeriodViewController.swift; sourceTree = "<group>"; };
+		558BC90B1EBAE1B0000D66FF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/Period_Tracker-dpgnhbomjqhthchaemwlmguskqhn/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		558BC90C1EBAE1B0000D66FF /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../Library/Developer/Xcode/DerivedData/Period_Tracker-dpgnhbomjqhthchaemwlmguskqhn/Build/Products/Debug-iphonesimulator/Realm/Realm.framework"; sourceTree = "<group>"; };
+		558BC90D1EBAE1B0000D66FF /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/Period_Tracker-dpgnhbomjqhthchaemwlmguskqhn/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
+		558BC9141EBAE610000D66FF /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		558BC9151EBAE610000D66FF /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		55C17D021E7C728300B844F2 /* ImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
+		55CF92FB1E771B7800BC772B /* PeriodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeriodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55CF92FE1E771B7800BC772B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		55CF93031E771B7800BC772B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		55CF93051E771B7800BC772B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55CF93081E771B7800BC772B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		55CF930A1E771B7800BC772B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55D1EC981E864C5D005C1CA3 /* CircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
+		55F839311E7D40D600A390A4 /* DayViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewCell.swift; sourceTree = "<group>"; };
+		764DADE8948C511433253DF5 /* Pods-PeriodTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeriodTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PeriodTracker/Pods-PeriodTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		C3B7478D6F02F394124C7BDD /* Pods-Period Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Period Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Period Tracker/Pods-Period Tracker.release.xcconfig"; sourceTree = "<group>"; };
+		EACA99EB467597D19E2FC93C /* Pods_Period_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Period_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55CF92F81E771B7800BC772B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				558BC9161EBAE610000D66FF /* Realm.framework in Frameworks */,
+				558BC9181EBAE610000D66FF /* RealmSwift.framework in Frameworks */,
+				65F92CCC14625C732029E09E /* Pods_PeriodTracker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00E479F6CEAA305FB0A2BAA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				558BC90B1EBAE1B0000D66FF /* Alamofire.framework */,
+				558BC90C1EBAE1B0000D66FF /* Realm.framework */,
+				558BC90D1EBAE1B0000D66FF /* RealmSwift.framework */,
+				EACA99EB467597D19E2FC93C /* Pods_Period_Tracker.framework */,
+				0219139CAF7B2E0FFEC3130C /* Pods_PeriodTracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5501E0971EA7301200E24F63 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5501E0A21EA7399400E24F63 /* IRANSans(FaNum)_Bold.ttf */,
+				5501E0A31EA7399400E24F63 /* IRANSans(FaNum)_Light.ttf */,
+				5501E0A41EA7399400E24F63 /* IRANSans(FaNum)_Medium.ttf */,
+				5501E0A51EA7399400E24F63 /* IRANSans(FaNum)_UltraLight.ttf */,
+				5501E0A61EA7399400E24F63 /* IRANSans(FaNum).ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		556FA0B21EAF28F0000798A9 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				550936191EBA1AA40015C251 /* PeriodNoteModel.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		55C17CFF1E7C700300B844F2 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				55C17D021E7C728300B844F2 /* ImagesViewController.swift */,
+				55D1EC981E864C5D005C1CA3 /* CircleViewController.swift */,
+				555BF6701EB78CBF0035A9BD /* LogPeriodViewController.swift */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		55CF92F21E771B7800BC772B = {
+			isa = PBXGroup;
+			children = (
+				558BC9141EBAE610000D66FF /* Realm.framework */,
+				558BC9151EBAE610000D66FF /* RealmSwift.framework */,
+				5501E0971EA7301200E24F63 /* Resources */,
+				55CF92FD1E771B7800BC772B /* PeriodTracker */,
+				55CF92FC1E771B7800BC772B /* Products */,
+				69E879F7C0DF678863AA4591 /* Pods */,
+				00E479F6CEAA305FB0A2BAA7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		55CF92FC1E771B7800BC772B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55CF92FB1E771B7800BC772B /* PeriodTracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55CF92FD1E771B7800BC772B /* PeriodTracker */ = {
+			isa = PBXGroup;
+			children = (
+				556FA0B21EAF28F0000798A9 /* model */,
+				55F839301E7D409200A390A4 /* cells */,
+				55C17CFF1E7C700300B844F2 /* controllers */,
+				55CF92FE1E771B7800BC772B /* AppDelegate.swift */,
+				55CF93021E771B7800BC772B /* Main.storyboard */,
+				55CF93051E771B7800BC772B /* Assets.xcassets */,
+				55CF93071E771B7800BC772B /* LaunchScreen.storyboard */,
+				55CF930A1E771B7800BC772B /* Info.plist */,
+			);
+			path = PeriodTracker;
+			sourceTree = "<group>";
+		};
+		55F839301E7D409200A390A4 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				55F839311E7D40D600A390A4 /* DayViewCell.swift */,
+			);
+			name = cells;
+			sourceTree = "<group>";
+		};
+		69E879F7C0DF678863AA4591 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0FA8BF60A00C0B39CDC7AFD1 /* Pods-Period Tracker.debug.xcconfig */,
+				C3B7478D6F02F394124C7BDD /* Pods-Period Tracker.release.xcconfig */,
+				764DADE8948C511433253DF5 /* Pods-PeriodTracker.debug.xcconfig */,
+				11300E77D34198A1845EA991 /* Pods-PeriodTracker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55CF92FA1E771B7800BC772B /* PeriodTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55CF930D1E771B7800BC772B /* Build configuration list for PBXNativeTarget "PeriodTracker" */;
+			buildPhases = (
+				75D448871503B2E9AC1391D1 /* [CP] Check Pods Manifest.lock */,
+				55CF92F71E771B7800BC772B /* Sources */,
+				55CF92F81E771B7800BC772B /* Frameworks */,
+				55CF92F91E771B7800BC772B /* Resources */,
+				556FA0B11EAF2899000798A9 /* Run Script */,
+				55C97A7E1EBA3B5D005DEF4D /* Embed Frameworks */,
+				EDAF54E12B739B73199E92E4 /* [CP] Embed Pods Frameworks */,
+				AC9AE89333EE0C9474F84931 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PeriodTracker;
+			productName = Test;
+			productReference = 55CF92FB1E771B7800BC772B /* PeriodTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55CF92F31E771B7800BC772B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Mahdiar ";
+				TargetAttributes = {
+					55CF92FA1E771B7800BC772B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = JBW63E2G5G;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 55CF92F61E771B7800BC772B /* Build configuration list for PBXProject "PeriodTracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55CF92F21E771B7800BC772B;
+			productRefGroup = 55CF92FC1E771B7800BC772B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55CF92FA1E771B7800BC772B /* PeriodTracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55CF92F91E771B7800BC772B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55CF93091E771B7800BC772B /* LaunchScreen.storyboard in Resources */,
+				55CF93061E771B7800BC772B /* Assets.xcassets in Resources */,
+				5501E0A71EA7399400E24F63 /* IRANSans(FaNum)_Bold.ttf in Resources */,
+				5501E0A81EA7399400E24F63 /* IRANSans(FaNum)_Light.ttf in Resources */,
+				5501E0A91EA7399400E24F63 /* IRANSans(FaNum)_Medium.ttf in Resources */,
+				5501E0AA1EA7399400E24F63 /* IRANSans(FaNum)_UltraLight.ttf in Resources */,
+				5501E0AB1EA7399400E24F63 /* IRANSans(FaNum).ttf in Resources */,
+				55CF93041E771B7800BC772B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		556FA0B11EAF2899000798A9 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+		75D448871503B2E9AC1391D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AC9AE89333EE0C9474F84931 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PeriodTracker/Pods-PeriodTracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDAF54E12B739B73199E92E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PeriodTracker/Pods-PeriodTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55CF92F71E771B7800BC772B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5509361A1EBA1AA40015C251 /* PeriodNoteModel.swift in Sources */,
+				55C17D031E7C728300B844F2 /* ImagesViewController.swift in Sources */,
+				55CF92FF1E771B7800BC772B /* AppDelegate.swift in Sources */,
+				55D1EC991E864C5D005C1CA3 /* CircleViewController.swift in Sources */,
+				55F839321E7D40D600A390A4 /* DayViewCell.swift in Sources */,
+				555BF6711EB78CBF0035A9BD /* LogPeriodViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		55CF93021E771B7800BC772B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55CF93031E771B7800BC772B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		55CF93071E771B7800BC772B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55CF93081E771B7800BC772B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		55CF930B1E771B7800BC772B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		55CF930C1E771B7800BC772B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55CF930E1E771B7800BC772B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 764DADE8948C511433253DF5 /* Pods-PeriodTracker.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JBW63E2G5G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = PeriodTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ir.mahdiyar.periodtracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		55CF930F1E771B7800BC772B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11300E77D34198A1845EA991 /* Pods-PeriodTracker.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JBW63E2G5G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = PeriodTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ir.mahdiyar.periodtracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55CF92F61E771B7800BC772B /* Build configuration list for PBXProject "PeriodTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55CF930B1E771B7800BC772B /* Debug */,
+				55CF930C1E771B7800BC772B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55CF930D1E771B7800BC772B /* Build configuration list for PBXNativeTarget "PeriodTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55CF930E1E771B7800BC772B /* Debug */,
+				55CF930F1E771B7800BC772B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55CF92F31E771B7800BC772B /* Project object */;
+}
