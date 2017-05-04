@@ -39,6 +39,20 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
         periodLength = (UserDefaults.standard.integer(forKey: "SELECT_PERIOD_LENGHT"))
         startPeriodDate = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: "period_begin_date"))
         
+        if periodDistance == 0 {
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            let tabBarController: UITabBarController = (appDelegate!.window!.rootViewController as? UITabBarController)!
+            tabBarController.selectedIndex = 0
+            
+            let alert = UIAlertController(title: "اطلاعات مورد نیاز را وارد کنید", message: "لطفا تاریخ شروع آخرین پریودیتان را وارد کنید", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "باشه", style: .cancel , handler: nil))
+            
+            present(alert, animated: true , completion: nil)
+            
+            return
+        }
+        
         if !saveNoteState {
             
             if selectDayLayer != nil {
