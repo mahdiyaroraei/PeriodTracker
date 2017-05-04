@@ -120,6 +120,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNn-hO-BGH">
+                                <rect key="frame" x="16" y="580" width="88" height="30"/>
+                                <state key="normal" title="Period Dates"/>
+                                <connections>
+                                    <action selector="selectPeriodDates:" destination="h0F-Ht-hdm" eventType="touchUpInside" id="SMP-eh-GrF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -128,6 +135,8 @@
                             <constraint firstItem="h8x-iq-qEg" firstAttribute="top" secondItem="LYe-Ie-eFM" secondAttribute="bottom" constant="8" id="aUa-1R-WBU"/>
                             <constraint firstItem="Pij-3R-Gem" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leadingMargin" id="afg-FP-ULC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LYe-Ie-eFM" secondAttribute="trailing" constant="75" id="bwu-s8-u2j"/>
+                            <constraint firstItem="h8x-iq-qEg" firstAttribute="top" secondItem="NNn-hO-BGH" secondAttribute="bottom" constant="8" id="bzg-4c-rft"/>
+                            <constraint firstItem="NNn-hO-BGH" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leadingMargin" id="gT9-SQ-CPj"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Pij-3R-Gem" secondAttribute="bottom" constant="7" id="hdj-TF-MLt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pij-3R-Gem" secondAttribute="trailing" constant="1" id="qVG-qW-e40"/>
                         </constraints>
@@ -138,6 +147,7 @@
                         <outlet property="distanceLabel" destination="jrJ-L2-a07" id="fl7-Cx-7Wj"/>
                         <outlet property="lengthLabel" destination="Z6Q-Jo-9Bw" id="20R-U0-NL8"/>
                         <outlet property="navItem" destination="ohy-aj-S58" id="IYf-th-kdf"/>
+                        <outlet property="periodDatesButton" destination="NNn-hO-BGH" id="ZIg-tf-Fon"/>
                         <outlet property="startLabel" destination="Z8B-7P-fkz" id="Ins-7d-2iD"/>
                     </connections>
                 </viewController>

@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ImagesViewController: UIViewController , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout , UICollectionViewDelegate,
 UIPickerViewDelegate , UIPickerViewDataSource{
-
+    
+    let realm = try! Realm()
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var navItem: UINavigationItem!
@@ -31,6 +34,21 @@ UIPickerViewDelegate , UIPickerViewDataSource{
         collectionView.reloadData()
     }
     
+    @IBOutlet weak var periodDatesButton: UIButton!
+    @IBAction func selectPeriodDates(_ sender: Any) {
+        if setupState == .SELECT_PERIOD_DATES {
+            setupState = .SELECT_DAY
+            periodDatesButton.setTitle("Period Dates", for: .normal)
+            dayOfMonth = 0
+            collectionView.reloadData()
+        }else{
+            setupState = .SELECT_PERIOD_DATES
+            periodDatesButton.setTitle("Done", for: .normal)
+            dayOfMonth = 0
+            collectionView.reloadData()
+        }
+    }
+    
     let identifier = "CellIdentifire"
     
     let DAYS : [String] = ["ش" , "ی" , "د" , "س" , "چ" , "پ" , "ج"]
@@ -46,6 +64,7 @@ UIPickerViewDelegate , UIPickerViewDataSource{
         case SELECT_DAY
         case SELECT_PERIOD_LENGHT
         case SELECT_PERIOD_DISTANCE
+        case SELECT_PERIOD_DATES
     }
     var setupState : SetupState = .SELECT_DAY
     
@@ -174,7 +193,27 @@ UIPickerViewDelegate , UIPickerViewDataSource{
             alert.addAction(UIAlertAction(title: "بله", style: UIAlertActionStyle.default, handler: {action in self.setupBeginPeriod(date: cell.date!)}))
             alert.addAction(UIAlertAction(title: "خیر", style: UIAlertActionStyle.cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
-        } else{
+        }else if setupState == .SELECT_PERIOD_DATES{
+            cell.choose = !cell.choose
+            if cell.choose {
+                cell.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+                
+                let dateModel = PeriodDateModel()
+                dateModel.timestamp = (cell.date?.timeIntervalSince1970)!
+                dateModel.id = dateModel.incrementID()
+                
+                try! realm.write {
+                    realm.add(dateModel)
+                }
+            }else{
+                cell.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+                
+                let dateModel = realm.objects(PeriodDateModel.self).filter("timestamp = \(String(describing: cell.date!.timeIntervalSince1970))").first
+                try! realm.write {
+                    realm.delete(dateModel!)
+                }
+            }
+        }else{
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let destinationVC = storyboard.instantiateViewController(withIdentifier: "NewsDetailsVCID")
@@ -275,6 +314,7 @@ UIPickerViewDelegate , UIPickerViewDataSource{
             cell.dayOfMonthLabel.text = String (dayOfMonth)
             
             
+            if setupState != .SELECT_PERIOD_DATES {
             if cell.date != nil && UserDefaults.standard.double(forKey: "period_begin_date") != 0{
                 let date : Date = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: "period_begin_date"))
                 var difference = Calendar.current.dateComponents([.day], from: date, to: cell.date!).day ?? 0
@@ -294,6 +334,10 @@ UIPickerViewDelegate , UIPickerViewDataSource{
                 }else if difference < periodDistance{
                     cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
                 }
+            }
+            }
+            if realm.objects(PeriodDateModel.self).filter("timestamp = \(String(describing: cell.date!.timeIntervalSince1970))").count > 0 {
+                cell.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             }
         }
 

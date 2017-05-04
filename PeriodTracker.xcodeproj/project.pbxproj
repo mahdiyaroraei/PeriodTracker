@@ -24,6 +24,7 @@
 		55CF93061E771B7800BC772B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CF93051E771B7800BC772B /* Assets.xcassets */; };
 		55CF93091E771B7800BC772B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55CF93071E771B7800BC772B /* LaunchScreen.storyboard */; };
 		55D1EC991E864C5D005C1CA3 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1EC981E864C5D005C1CA3 /* CircleViewController.swift */; };
+		55DDE36B1EBB52F000A15A98 /* PeriodDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DDE36A1EBB52F000A15A98 /* PeriodDateModel.swift */; };
 		55F839321E7D40D600A390A4 /* DayViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F839311E7D40D600A390A4 /* DayViewCell.swift */; };
 		65F92CCC14625C732029E09E /* Pods_PeriodTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0219139CAF7B2E0FFEC3130C /* Pods_PeriodTracker.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		55CF93081E771B7800BC772B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55CF930A1E771B7800BC772B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55D1EC981E864C5D005C1CA3 /* CircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
+		55DDE36A1EBB52F000A15A98 /* PeriodDateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodDateModel.swift; sourceTree = "<group>"; };
 		55F839311E7D40D600A390A4 /* DayViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewCell.swift; sourceTree = "<group>"; };
 		764DADE8948C511433253DF5 /* Pods-PeriodTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeriodTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PeriodTracker/Pods-PeriodTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		C3B7478D6F02F394124C7BDD /* Pods-Period Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Period Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Period Tracker/Pods-Period Tracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				550936191EBA1AA40015C251 /* PeriodNoteModel.swift */,
+				55DDE36A1EBB52F000A15A98 /* PeriodDateModel.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				55CF92FF1E771B7800BC772B /* AppDelegate.swift in Sources */,
 				55D1EC991E864C5D005C1CA3 /* CircleViewController.swift in Sources */,
 				55F839321E7D40D600A390A4 /* DayViewCell.swift in Sources */,
+				55DDE36B1EBB52F000A15A98 /* PeriodDateModel.swift in Sources */,
 				555BF6711EB78CBF0035A9BD /* LogPeriodViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
