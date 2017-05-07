@@ -20,8 +20,8 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
     var angelUnit : Double?
     let MONTH : [String] = ["فروردین" , "اردیبهشت" , "خرداد" , "تیر" , "مرداد" , "شهریور" , "مهر" , "آبان" , "آذر" , "دی" , "بهمن" , "اسفند"]
     var timestamp: Double! = 0
-    var saveNoteState = false
-
+    static var saveNoteState = false
+    
     @IBOutlet weak var dayLabel: UILabel!
     
     let periodLayer = CAShapeLayer()
@@ -53,7 +53,7 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
             return
         }
         
-        if !saveNoteState {
+        if !CircleViewController.saveNoteState {
             
             if selectDayLayer != nil {
                 selectDayLayer?.removeFromSuperlayer()
@@ -62,7 +62,7 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
                 fertileLayer.removeFromSuperlayer()
                 cloudLayer.removeFromSuperlayer()
             }
-        
+            
             setupDate()
             drawCircleBasic()
             drawCircleCloud()
@@ -71,7 +71,6 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
             setupGestureView()
             setupPoints()
             selectDay(sender: points[0])
-            saveNoteState = false
         }
     }
     
@@ -90,7 +89,7 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
     }
     
     func dayTapped(sender:UITapGestureRecognizer) {
-        saveNoteState = true
+        CircleViewController.saveNoteState = true
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "NewsDetailsVCID")
         
@@ -101,7 +100,7 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
     }
     
     func setupPoints() {
-        
+        points.removeAll()
         let centerPoint:CGPoint = view.center
         let radius = CGFloat(view.frame.size.width / 2 - 35)
         let a = (M_PI * 2) / Double (periodDistance)
@@ -149,7 +148,7 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
         textLayer = CATextLayer()
         textLayer?.string = "\(selectedDay)"
         textLayer?.foregroundColor = UIColor.white.cgColor
-        textLayer?.font = UIFont(name: "IRANSans(FaNum)", size: 12)
+        textLayer?.font = UIFont(name: "IRANSans(FaNum)", size: 15)
         textLayer?.fontSize = 15
         textLayer?.alignmentMode = kCAAlignmentCenter
         textLayer?.frame = CGRect(origin: CGPoint(x:selectedPoint.x - 25 , y:selectedPoint.y - 12), size: CGSize(width: 50, height: 50))
@@ -254,21 +253,21 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
             view.layer.addSublayer(imageLayer)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

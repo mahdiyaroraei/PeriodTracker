@@ -32,6 +32,8 @@ UIPickerViewDelegate , UIPickerViewDataSource{
         setupUserSavedData()
         dayOfMonth = 0
         collectionView.reloadData()
+        
+        CircleViewController.saveNoteState = false
     }
     
     @IBOutlet weak var periodDatesButton: UIButton!
@@ -181,7 +183,7 @@ UIPickerViewDelegate , UIPickerViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell : DayViewCell = collectionView.cellForItem(at: indexPath) as! DayViewCell
-        if cell.date != nil && UserDefaults.standard.double(forKey: "period_begin_date") == 0{
+        if cell.date != nil && UserDefaults.standard.double(forKey: "period_begin_date") == 0 && setupState != .SELECT_PERIOD_DATES{
             
             let dayTimePeriodFormatter = DateFormatter()
             dayTimePeriodFormatter.dateFormat = "MMM dd YYYY hh:mm a"
