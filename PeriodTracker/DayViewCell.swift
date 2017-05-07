@@ -12,7 +12,8 @@ class DayViewCell: UICollectionViewCell {
     
     @IBOutlet weak var dayOfMonthLabel: UILabel!
     
-    var date:Date?
+    var date:Date?  
+    var choose = false
     
     override init(frame: CGRect) {
         super.init(frame:frame)

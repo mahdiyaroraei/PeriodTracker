@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bXp-6x-Sff">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bXp-6x-Sff">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +20,7 @@
         <!--Title-->
         <scene sceneID="eyW-lj-ts9">
             <objects>
-                <viewController id="h0F-Ht-hdm" customClass="ImagesViewController" customModule="Period_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h0F-Ht-hdm" customClass="ImagesViewController" customModule="PeriodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tzj-47-xBk"/>
                         <viewControllerLayoutGuide type="bottom" id="h8x-iq-qEg"/>
@@ -39,7 +39,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellIdentifire" id="8cO-c5-6ms" customClass="DayViewCell" customModule="Period_Tracker" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellIdentifire" id="8cO-c5-6ms" customClass="DayViewCell" customModule="PeriodTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -120,6 +120,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNn-hO-BGH">
+                                <rect key="frame" x="16" y="580" width="88" height="30"/>
+                                <state key="normal" title="Period Dates"/>
+                                <connections>
+                                    <action selector="selectPeriodDates:" destination="h0F-Ht-hdm" eventType="touchUpInside" id="SMP-eh-GrF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -128,6 +135,8 @@
                             <constraint firstItem="h8x-iq-qEg" firstAttribute="top" secondItem="LYe-Ie-eFM" secondAttribute="bottom" constant="8" id="aUa-1R-WBU"/>
                             <constraint firstItem="Pij-3R-Gem" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leadingMargin" id="afg-FP-ULC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LYe-Ie-eFM" secondAttribute="trailing" constant="75" id="bwu-s8-u2j"/>
+                            <constraint firstItem="h8x-iq-qEg" firstAttribute="top" secondItem="NNn-hO-BGH" secondAttribute="bottom" constant="8" id="bzg-4c-rft"/>
+                            <constraint firstItem="NNn-hO-BGH" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leadingMargin" id="gT9-SQ-CPj"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Pij-3R-Gem" secondAttribute="bottom" constant="7" id="hdj-TF-MLt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pij-3R-Gem" secondAttribute="trailing" constant="1" id="qVG-qW-e40"/>
                         </constraints>
@@ -138,6 +147,7 @@
                         <outlet property="distanceLabel" destination="jrJ-L2-a07" id="fl7-Cx-7Wj"/>
                         <outlet property="lengthLabel" destination="Z6Q-Jo-9Bw" id="20R-U0-NL8"/>
                         <outlet property="navItem" destination="ohy-aj-S58" id="IYf-th-kdf"/>
+                        <outlet property="periodDatesButton" destination="NNn-hO-BGH" id="ZIg-tf-Fon"/>
                         <outlet property="startLabel" destination="Z8B-7P-fkz" id="Ins-7d-2iD"/>
                     </connections>
                 </viewController>
@@ -168,7 +178,7 @@
         <!--جزییات دوره-->
         <scene sceneID="9CP-YX-OmF">
             <objects>
-                <viewController id="m3z-f4-RsG" customClass="CircleViewController" customModule="Period_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="m3z-f4-RsG" customClass="CircleViewController" customModule="PeriodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IWw-2M-of1"/>
                         <viewControllerLayoutGuide type="bottom" id="gd4-D9-CD2"/>
@@ -180,7 +190,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="۳۱-اردیبهشت-۹۶" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcL-4K-30U">
                                 <rect key="frame" x="108" y="323" width="160" height="21"/>
                                 <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.20701183931862355" green="0.35386291974176121" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -245,6 +255,67 @@
             </objects>
             <point key="canvasLocation" x="-535" y="1087"/>
         </scene>
+        <!--Log Period-->
+        <scene sceneID="OtR-b9-Y1k">
+            <objects>
+                <viewController storyboardIdentifier="LogPeriodVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="myC-d7-ZXg" customClass="LogPeriodViewController" customModule="PeriodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Txr-4m-zaC"/>
+                        <viewControllerLayoutGuide type="bottom" id="sqB-aN-hKx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cSd-SP-Kon">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="Ae4-BN-YsT">
+                                <rect key="frame" x="16" y="236" width="343" height="194"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" hint="توضیحات"/>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhu-T7-ZOU">
+                                <rect key="frame" x="16" y="400" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="QrF-Dh-ebf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="14"/>
+                                <state key="normal" title="ذخیره"/>
+                                <connections>
+                                    <action selector="saveNote:" destination="myC-d7-ZXg" eventType="touchUpInside" id="yh7-Td-zQx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="توضیحات را در باکس زیر وارد کنید" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-pS-ciR">
+                                <rect key="frame" x="16" y="98" width="343" height="54"/>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="16"/>
+                                <color key="textColor" red="0.98709518984875155" green="1" blue="0.98572154153680902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33092784371814743" green="0.58960965441288071" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dhu-T7-ZOU" firstAttribute="leading" secondItem="Ae4-BN-YsT" secondAttribute="leading" id="78V-8f-aq4"/>
+                            <constraint firstItem="sqB-aN-hKx" firstAttribute="top" secondItem="Ae4-BN-YsT" secondAttribute="bottom" constant="150" id="9Vj-CN-4tX"/>
+                            <constraint firstItem="ljv-pS-ciR" firstAttribute="leading" secondItem="cSd-SP-Kon" secondAttribute="leadingMargin" id="FWd-1f-5xr"/>
+                            <constraint firstItem="ljv-pS-ciR" firstAttribute="trailing" secondItem="cSd-SP-Kon" secondAttribute="trailingMargin" id="I8a-21-ae6"/>
+                            <constraint firstItem="dhu-T7-ZOU" firstAttribute="bottom" secondItem="Ae4-BN-YsT" secondAttribute="bottom" id="Uus-hE-rZ0"/>
+                            <constraint firstItem="Ae4-BN-YsT" firstAttribute="top" secondItem="Txr-4m-zaC" secondAttribute="bottom" constant="150" id="i2B-zI-4aq"/>
+                            <constraint firstItem="Ae4-BN-YsT" firstAttribute="leading" secondItem="cSd-SP-Kon" secondAttribute="leadingMargin" id="oUU-r0-Yvc"/>
+                            <constraint firstItem="Ae4-BN-YsT" firstAttribute="trailing" secondItem="cSd-SP-Kon" secondAttribute="trailingMargin" id="rh1-4v-jJ2"/>
+                            <constraint firstItem="Ae4-BN-YsT" firstAttribute="top" secondItem="ljv-pS-ciR" secondAttribute="bottom" constant="84" id="xIt-gA-2qq"/>
+                            <constraint firstItem="ljv-pS-ciR" firstAttribute="top" secondItem="Txr-4m-zaC" secondAttribute="bottom" constant="34" id="zeY-Jt-eVi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Log Period" id="3Dh-yr-Lop"/>
+                    <connections>
+                        <outlet property="navItem" destination="3Dh-yr-Lop" id="uyS-jt-5K3"/>
+                        <outlet property="noteTextView" destination="Ae4-BN-YsT" id="8xO-LL-JHb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dqa-A9-S2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="640.79999999999995" y="2007.346326836582"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HHd-h9-Eth">
             <objects>
@@ -270,7 +341,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="792-HP-ZxA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Calendar" id="o9k-Hx-9As"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gGQ-5J-q4n">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gGQ-5J-q4n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -285,6 +356,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykB-Wm-gUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-535" y="-1181"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lui-BR-POP">
+            <objects>
+                <navigationController storyboardIdentifier="NewsDetailsVCID" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="atD-l6-myK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="baQ-iY-erP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="myC-d7-ZXg" kind="relationship" relationship="rootViewController" id="kO4-tY-bAb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zzz-UF-ykU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-535" y="2009"/>
         </scene>
     </scenes>
 </document>
