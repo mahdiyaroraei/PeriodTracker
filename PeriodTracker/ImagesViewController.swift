@@ -73,14 +73,17 @@ UIPickerViewDelegate , UIPickerViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.backgroundColor = UIColor(white: 1, alpha: 0)
         collectionView.dataSource = self
         
         calendar = Calendar(identifier: .persian)
         dateComponents = calendar.dateComponents([.year, .month, .day], from: Date())
         dateComponents.day = 1
         navItem.title = "\(MONTH[dateComponents.month! - 1]) - \(Int(dateComponents.year!))"
-        navItem.leftBarButtonItem = UIBarButtonItem(title: "pre", style: .plain, target: self, action: #selector(preMonth))
-        navItem.rightBarButtonItem = UIBarButtonItem(title: "next", style: .plain, target: self, action: #selector(nextMonth))
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "قبل", style: .plain, target: self, action: #selector(preMonth))
+        navItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "IRANSans(FaNum)", size: 15)!], for: .normal)
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "بعد", style: .plain, target: self, action: #selector(nextMonth))
+        navItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "IRANSans(FaNum)", size: 15)!], for: .normal)
         
         setupUserSavedData()
     }
@@ -167,13 +170,18 @@ UIPickerViewDelegate , UIPickerViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell :DayViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath as IndexPath) as! DayViewCell
         
-        cell.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        if cell.detailLayer != nil {
+            cell.detailLayer?.removeFromSuperlayer()
+        }
+        if cell.todayLayer != nil {
+            cell.todayLayer?.removeFromSuperlayer()
+        }
         
         setupMonthCalendar(cell: cell, indexPath: indexPath)
         
         if indexPath.item < 7 {
-            cell.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
-            cell.dayOfMonthLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            cell.backgroundColor = UIColor(white: 1, alpha: 0)
+            cell.dayOfMonthLabel.textColor = Utility.uicolorFromHex(rgbValue: 0x908F96)
             cell.dayOfMonthLabel.text = DAYS[indexPath.item]
             cell.date = nil
         }
@@ -198,7 +206,7 @@ UIPickerViewDelegate , UIPickerViewDataSource{
         }else if setupState == .SELECT_PERIOD_DATES{
             cell.choose = !(realm.objects(PeriodDateModel.self).filter("timestamp = \(cell.date!.timeIntervalSince1970)").count > 0)
             if cell.choose {
-                cell.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+                cell.dayOfMonthLabel.textColor = UIColor.red
                 
                 let dateModel = PeriodDateModel()
                 dateModel.timestamp = (cell.date?.timeIntervalSince1970)!
@@ -209,7 +217,7 @@ UIPickerViewDelegate , UIPickerViewDataSource{
                 }
                 
             }else{
-                cell.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+                cell.dayOfMonthLabel.textColor = UIColor.white
                 
                 let dateModel = realm.objects(PeriodDateModel.self).filter("timestamp = \(cell.date!.timeIntervalSince1970)").first
                 try! realm.write {
@@ -303,9 +311,10 @@ UIPickerViewDelegate , UIPickerViewDataSource{
         
         let range = calendar.range(of: .day, in: .month, for: firstDayOfMonthDate)
         let dayNums = range?.count
+        cell.dayOfMonthLabel.text = ""
         
         if (indexPath.item < 7 + index && indexPath.item > 6) || indexPath.item > dayNums! + 6 + index {
-            cell.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+            cell.backgroundColor = UIColor(white: 1, alpha: 0)
             cell.date = nil
             cell.dayOfMonthLabel.textColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
         }else if indexPath.item > 6{
@@ -316,6 +325,18 @@ UIPickerViewDelegate , UIPickerViewDataSource{
             cell.date = calendar.date(from: cellDateComponnet)
             cell.dayOfMonthLabel.text = String (dayOfMonth)
             
+            if calendar.isDateInToday(cell.date!) {
+                let todayPath = UIBezierPath(arcCenter: CGPoint(x: cell.frame.size.width / 2, y: cell.frame.size.height / 2), radius: cell.frame.size.width / 2 - 3, startAngle: CGFloat(0), endAngle:CGFloat(Double.pi * 2), clockwise: true)
+                
+                let todayLayer = CAShapeLayer()
+                todayLayer.path = todayPath.cgPath
+                todayLayer.fillColor = UIColor.clear.cgColor
+                todayLayer.strokeColor = Utility.uicolorFromHex(rgbValue: 0xFFC107).cgColor
+                todayLayer.lineWidth = 3.0
+                cell.todayLayer = todayLayer
+                
+                cell.layer.addSublayer(todayLayer)
+            }
             
             if setupState != .SELECT_PERIOD_DATES {
                 if cell.date != nil && UserDefaults.standard.double(forKey: "period_begin_date") != 0{
@@ -328,19 +349,32 @@ UIPickerViewDelegate , UIPickerViewDataSource{
                     
                     difference = difference % periodDistance
                     
+                    let circlePath = UIBezierPath(arcCenter: CGPoint(x: cell.frame.size.width / 2, y: cell.frame.size.height - 10), radius: 2, startAngle: CGFloat(0), endAngle:CGFloat(Double.pi * 2), clockwise: true)
+                    
+                    let detailLayer = CAShapeLayer()
+                    detailLayer.path = circlePath.cgPath
+                    detailLayer.fillColor = UIColor.black.cgColor
+                    cell.detailLayer = detailLayer
+                    
+                    
                     if difference < periodLength && diff >= 0{
-                        cell.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+                        detailLayer.fillColor = UIColor.red.cgColor
+                        cell.layer.addSublayer(detailLayer)
                     }else if difference < periodDistance - 7{
                         if difference > periodDistance / 2 - 3 && difference < periodDistance / 2 + 3{
-                            cell.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+                            detailLayer.fillColor = UIColor.blue.cgColor
+                            cell.layer.addSublayer(detailLayer)
                         }
                     }else if difference < periodDistance{
-                        cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+                        detailLayer.fillColor = UIColor.gray.cgColor
+                        cell.layer.addSublayer(detailLayer)
+                    }else{
+                        detailLayer.removeFromSuperlayer()
                     }
                 }
             }
             if realm.objects(PeriodDateModel.self).filter("timestamp = \(String(describing: cell.date!.timeIntervalSince1970))").count > 0 {
-                cell.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+                cell.dayOfMonthLabel.textColor = UIColor.red
             }
         }
         

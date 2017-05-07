@@ -14,6 +14,8 @@ class DayViewCell: UICollectionViewCell {
     
     var date:Date?  
     var choose = false
+    var detailLayer : CAShapeLayer?
+    var todayLayer : CAShapeLayer? 
     
     override init(frame: CGRect) {
         super.init(frame:frame)
