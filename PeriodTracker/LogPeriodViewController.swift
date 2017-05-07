@@ -20,13 +20,18 @@ class LogPeriodViewController: UIViewController {
     let realm = try! Realm()
     
     var update : Bool? = false
+    var updateId : Int? = 0
     
     @IBAction func saveNote(_ sender: Any) {
         
         let noteModel : PeriodNoteModel = PeriodNoteModel()
         noteModel.timestamp = LogPeriodViewController.timestamp!
         noteModel.note = noteTextView.text
-        noteModel.id = noteModel.incrementID()
+        if update! {
+            noteModel.id = updateId!
+        }else{
+            noteModel.id = noteModel.incrementID()
+        }
         
         try! realm.write {
             realm.add(noteModel , update: update!)
