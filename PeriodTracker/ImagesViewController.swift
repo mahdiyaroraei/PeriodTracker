@@ -70,7 +70,7 @@ UIPickerViewDelegate , UIPickerViewDataSource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         collectionView.dataSource = self
         
         calendar = Calendar(identifier: .persian)
@@ -194,7 +194,7 @@ UIPickerViewDelegate , UIPickerViewDataSource{
             alert.addAction(UIAlertAction(title: "خیر", style: UIAlertActionStyle.cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }else if setupState == .SELECT_PERIOD_DATES{
-            cell.choose = !cell.choose
+            cell.choose = !(realm.objects(PeriodDateModel.self).filter("timestamp = \(cell.date!.timeIntervalSince1970)").count > 0)
             if cell.choose {
                 cell.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
                 
@@ -205,10 +205,11 @@ UIPickerViewDelegate , UIPickerViewDataSource{
                 try! realm.write {
                     realm.add(dateModel)
                 }
+                
             }else{
                 cell.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
                 
-                let dateModel = realm.objects(PeriodDateModel.self).filter("timestamp = \(String(describing: cell.date!.timeIntervalSince1970))").first
+                let dateModel = realm.objects(PeriodDateModel.self).filter("timestamp = \(cell.date!.timeIntervalSince1970)").first
                 try! realm.write {
                     realm.delete(dateModel!)
                 }
@@ -315,32 +316,32 @@ UIPickerViewDelegate , UIPickerViewDataSource{
             
             
             if setupState != .SELECT_PERIOD_DATES {
-            if cell.date != nil && UserDefaults.standard.double(forKey: "period_begin_date") != 0{
-                let date : Date = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: "period_begin_date"))
-                var difference = Calendar.current.dateComponents([.day], from: date, to: cell.date!).day ?? 0
-                let diff = difference
-                
-                let periodLength = UserDefaults.standard.integer(forKey: "SELECT_PERIOD_LENGHT")
-                let periodDistance = UserDefaults.standard.integer(forKey: "SELECT_PERIOD_DISTANCE")
-                
-                difference = difference % periodDistance
-                
-                if difference < periodLength && diff >= 0{
-                    cell.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-                }else if difference < periodDistance - 7{
-                    if difference > periodDistance / 2 - 3 && difference < periodDistance / 2 + 3{
-                        cell.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+                if cell.date != nil && UserDefaults.standard.double(forKey: "period_begin_date") != 0{
+                    let date : Date = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: "period_begin_date"))
+                    var difference = Calendar.current.dateComponents([.day], from: date, to: cell.date!).day ?? 0
+                    let diff = difference
+                    
+                    let periodLength = UserDefaults.standard.integer(forKey: "SELECT_PERIOD_LENGHT")
+                    let periodDistance = UserDefaults.standard.integer(forKey: "SELECT_PERIOD_DISTANCE")
+                    
+                    difference = difference % periodDistance
+                    
+                    if difference < periodLength && diff >= 0{
+                        cell.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+                    }else if difference < periodDistance - 7{
+                        if difference > periodDistance / 2 - 3 && difference < periodDistance / 2 + 3{
+                            cell.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+                        }
+                    }else if difference < periodDistance{
+                        cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
                     }
-                }else if difference < periodDistance{
-                    cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
                 }
-            }
             }
             if realm.objects(PeriodDateModel.self).filter("timestamp = \(String(describing: cell.date!.timeIntervalSince1970))").count > 0 {
                 cell.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             }
         }
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -348,7 +349,7 @@ UIPickerViewDelegate , UIPickerViewDataSource{
         return CGSize(width: collectionView.bounds.size.width/7 - 1, height: collectionView.bounds.size.width/7 - 1)
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -416,15 +417,15 @@ UIPickerViewDelegate , UIPickerViewDataSource{
         return "Just now"
         
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -26,6 +26,7 @@ class LogPeriodViewController: UIViewController {
         let noteModel : PeriodNoteModel = PeriodNoteModel()
         noteModel.timestamp = LogPeriodViewController.timestamp!
         noteModel.note = noteTextView.text
+        noteModel.id = noteModel.incrementID()
         
         try! realm.write {
             realm.add(noteModel , update: update!)
