@@ -12,10 +12,12 @@ class DayViewCell: UICollectionViewCell {
     
     @IBOutlet weak var dayOfMonthLabel: UILabel!
     
+    @IBOutlet weak var noteImage: UIImageView!
+    
     var date:Date?  
     var choose = false
     var detailLayer : CAShapeLayer?
-    var todayLayer : CAShapeLayer? 
+    var todayLayer : CAShapeLayer?
     
     override init(frame: CGRect) {
         super.init(frame:frame)

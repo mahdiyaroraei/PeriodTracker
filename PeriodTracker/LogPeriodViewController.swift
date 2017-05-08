@@ -17,6 +17,8 @@ class LogPeriodViewController: UIViewController {
     
     @IBOutlet weak var noteTextView: UITextView!
     
+    @IBOutlet weak var dateLabel: UILabel!
+    
     let realm = try! Realm()
     
     var update : Bool? = false
@@ -43,6 +45,10 @@ class LogPeriodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let calendar = Calendar(identifier: .persian)
+        let dateComponents = calendar.dateComponents([.year , .month , .day], from: Date(timeIntervalSince1970: LogPeriodViewController.timestamp))
+        dateLabel.text = "\(Int(dateComponents.year!)) / \(dateComponents.month!) / \(Int(dateComponents.day!))"
+        
         self.automaticallyAdjustsScrollViewInsets = false
         noteTextView.clipsToBounds = true
         noteTextView.layer.cornerRadius = 5.0
@@ -50,8 +56,9 @@ class LogPeriodViewController: UIViewController {
         noteTextView.layer.shadowRadius = 10.0
         noteTextView.layer.shadowColor = UIColor.black.cgColor
         noteTextView.layer.shadowOffset = CGSize(width: 2, height: 3)
-        navItem.leftBarButtonItem = UIBarButtonItem(title: "cancel", style: .done, target: self, action: #selector(done))
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "لغو", style: .done, target: self, action: #selector(done))
         
+        navItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "IRANSans(FaNum)", size: 15)!], for: .normal)
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         

@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+        
         var tabBarAppearace = UITabBar.appearance()
         tabBarAppearace.tintColor = uicolorFromHex(rgbValue: 0xE3D9D2)
         tabBarAppearace.barTintColor = uicolorFromHex(rgbValue: 0x23272F)

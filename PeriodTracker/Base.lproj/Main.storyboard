@@ -29,8 +29,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pij-3R-Gem">
-                                <rect key="frame" x="16" y="72" width="342" height="588"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" semanticContentAttribute="forceRightToLeft" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pij-3R-Gem">
+                                <rect key="frame" x="16" y="183" width="342" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="ie3-wk-3MA"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="Jym-Oc-3s8">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -39,7 +42,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellIdentifire" id="8cO-c5-6ms" customClass="DayViewCell" customModule="PeriodTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="292" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -51,16 +54,21 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="note" translatesAutoresizingMaskIntoConstraints="NO" id="euB-Bg-Xmy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="12" height="13"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="aOn-bR-sHR" firstAttribute="centerX" secondItem="8cO-c5-6ms" secondAttribute="centerX" id="Cul-km-QA8"/>
-                                            <constraint firstItem="aOn-bR-sHR" firstAttribute="leading" secondItem="8cO-c5-6ms" secondAttribute="leadingMargin" constant="-4" id="j3G-9x-Jh0"/>
-                                            <constraint firstItem="aOn-bR-sHR" firstAttribute="top" secondItem="8cO-c5-6ms" secondAttribute="topMargin" constant="-2" id="qqS-vO-CYE"/>
-                                            <constraint firstItem="aOn-bR-sHR" firstAttribute="centerY" secondItem="8cO-c5-6ms" secondAttribute="centerY" id="z1Y-kh-GF0"/>
+                                            <constraint firstItem="aOn-bR-sHR" firstAttribute="centerX" secondItem="8cO-c5-6ms" secondAttribute="centerX" id="DFN-qt-4oi"/>
+                                            <constraint firstItem="aOn-bR-sHR" firstAttribute="centerY" secondItem="8cO-c5-6ms" secondAttribute="centerY" id="Iaj-oM-Eve"/>
+                                            <constraint firstItem="aOn-bR-sHR" firstAttribute="top" secondItem="8cO-c5-6ms" secondAttribute="topMargin" constant="-2" id="PcE-SX-Kaf"/>
+                                            <constraint firstItem="aOn-bR-sHR" firstAttribute="leading" secondItem="8cO-c5-6ms" secondAttribute="leadingMargin" constant="-4" id="XpH-fJ-q8C"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="dayOfMonthLabel" destination="aOn-bR-sHR" id="L2s-mt-R9a"/>
+                                            <outlet property="noteImage" destination="euB-Bg-Xmy" id="geH-Bf-AZ3"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -69,118 +77,99 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYe-Ie-eFM">
-                                <rect key="frame" x="91" y="580" width="193" height="30"/>
-                                <state key="normal" title="Load Defaults"/>
+                                <rect key="frame" x="287" y="573" width="81" height="38"/>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="15"/>
+                                <state key="normal" title="تنظیمات اولیه">
+                                    <color key="titleColor" red="1" green="0.83921568627450982" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="clearSettings:" destination="h0F-Ht-hdm" eventType="touchUpInside" id="aWG-iL-t5x"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnp-by-C9i">
-                                <rect key="frame" x="0.0" y="64" width="375" height="67"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="شروع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CzZ-IZ-vyq">
-                                        <rect key="frame" x="237" y="18" width="24" height="39"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="4lN-Ez-CHo"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="14" id="O5i-0Q-8LL"/>
-                                            <constraint firstAttribute="width" constant="24" id="P0Q-HL-4ix"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="k39-Ib-MpH"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="10"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="طول مدت: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62B-PG-TzN">
-                                        <rect key="frame" x="105" y="40" width="44" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="Fgf-pl-E1u"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="10"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6Q-Jo-9Bw">
-                                        <rect key="frame" x="-12" y="43" width="88" height="21"/>
-                                        <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrJ-L2-a07">
-                                        <rect key="frame" x="157" y="43" width="60" height="21"/>
-                                        <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8B-7P-fkz">
-                                        <rect key="frame" x="0.0" y="8" width="217" height="21"/>
-                                        <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="فاصله دوره ها: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foz-SC-S8s">
-                                        <rect key="frame" x="308" y="43" width="59" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="59" id="dnj-PJ-qN1"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="10"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="start_date" translatesAutoresizingMaskIntoConstraints="NO" id="otx-Xy-zcO">
-                                        <rect key="frame" x="237" y="8" width="24" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="9aH-8S-ifn"/>
-                                            <constraint firstAttribute="height" constant="24" id="Sld-sz-Ckq"/>
-                                            <constraint firstAttribute="width" constant="24" id="b3m-Fn-GIB"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="14" id="u9N-i6-tsI"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="Z6Q-Jo-9Bw" firstAttribute="baseline" secondItem="jrJ-L2-a07" secondAttribute="baseline" id="1VR-mM-awG"/>
-                                    <constraint firstItem="otx-Xy-zcO" firstAttribute="top" secondItem="bnp-by-C9i" secondAttribute="top" constant="-6" id="275-Bp-KIV"/>
-                                    <constraint firstItem="Z8B-7P-fkz" firstAttribute="top" secondItem="bnp-by-C9i" secondAttribute="top" id="6JP-zh-Ji2"/>
-                                    <constraint firstItem="jrJ-L2-a07" firstAttribute="bottom" secondItem="foz-SC-S8s" secondAttribute="bottom" id="CIJ-jt-qDD"/>
-                                    <constraint firstAttribute="bottom" secondItem="Z6Q-Jo-9Bw" secondAttribute="bottom" constant="3" id="IWU-AC-Q9l"/>
-                                    <constraint firstItem="CzZ-IZ-vyq" firstAttribute="top" secondItem="otx-Xy-zcO" secondAttribute="bottom" id="KA5-z4-S4K"/>
-                                    <constraint firstItem="otx-Xy-zcO" firstAttribute="leading" secondItem="CzZ-IZ-vyq" secondAttribute="leading" id="P6N-Ig-QJZ"/>
-                                    <constraint firstItem="foz-SC-S8s" firstAttribute="trailing" secondItem="bnp-by-C9i" secondAttribute="trailingMargin" id="WZk-Hv-TVn"/>
-                                    <constraint firstItem="Z8B-7P-fkz" firstAttribute="leading" secondItem="bnp-by-C9i" secondAttribute="leading" id="f7Y-gX-uvc"/>
-                                    <constraint firstItem="Z6Q-Jo-9Bw" firstAttribute="top" secondItem="Z8B-7P-fkz" secondAttribute="bottom" constant="22" id="h42-gd-oYo"/>
-                                    <constraint firstItem="Z8B-7P-fkz" firstAttribute="trailing" secondItem="jrJ-L2-a07" secondAttribute="trailing" id="iFh-da-Dx7"/>
-                                    <constraint firstItem="jrJ-L2-a07" firstAttribute="leading" secondItem="62B-PG-TzN" secondAttribute="trailing" constant="8" symbolic="YES" id="jKG-Yu-52f"/>
-                                    <constraint firstItem="jrJ-L2-a07" firstAttribute="centerX" secondItem="bnp-by-C9i" secondAttribute="centerX" id="ktG-Bs-xkz"/>
-                                    <constraint firstItem="Z6Q-Jo-9Bw" firstAttribute="leading" secondItem="bnp-by-C9i" secondAttribute="leading" constant="-12" id="lQR-LJ-L5f"/>
-                                    <constraint firstItem="jrJ-L2-a07" firstAttribute="top" secondItem="foz-SC-S8s" secondAttribute="top" id="nyK-fz-L0U"/>
-                                    <constraint firstItem="62B-PG-TzN" firstAttribute="leading" secondItem="Z6Q-Jo-9Bw" secondAttribute="trailing" constant="29" id="qMa-Pb-aMl"/>
-                                    <constraint firstItem="foz-SC-S8s" firstAttribute="leading" secondItem="jrJ-L2-a07" secondAttribute="trailing" constant="91" id="tZe-Ul-BU1"/>
-                                    <constraint firstItem="otx-Xy-zcO" firstAttribute="leading" secondItem="Z8B-7P-fkz" secondAttribute="trailing" constant="20" id="ued-WP-a7S"/>
-                                    <constraint firstItem="62B-PG-TzN" firstAttribute="top" secondItem="Z8B-7P-fkz" secondAttribute="bottom" constant="19" id="w2e-wF-JM5"/>
-                                    <constraint firstAttribute="bottom" secondItem="62B-PG-TzN" secondAttribute="bottom" constant="6" id="w8i-vn-mo4"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNn-hO-BGH">
-                                <rect key="frame" x="16" y="580" width="88" height="30"/>
-                                <state key="normal" title="Period Dates"/>
+                                <rect key="frame" x="7" y="573" width="71" height="38"/>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="15"/>
+                                <state key="normal" title="ثبت پریودی">
+                                    <color key="titleColor" red="1" green="0.83921568627450982" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="selectPeriodDates:" destination="h0F-Ht-hdm" eventType="touchUpInside" id="SMP-eh-GrF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8B-7P-fkz">
+                                <rect key="frame" x="112" y="122" width="150" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="caG-GK-8Jr"/>
+                                    <constraint firstAttribute="width" constant="150" id="yvo-oK-xNX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="15"/>
+                                <color key="textColor" red="0.97254901960784312" green="0.69411764705882351" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnp-by-C9i">
+                                <rect key="frame" x="62" y="145" width="250" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="طول مدت: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62B-PG-TzN">
+                                        <rect key="frame" x="35.5" y="9.5" width="44" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="10"/>
+                                        <color key="textColor" red="0.96470588235294119" green="0.44705882352941173" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6Q-Jo-9Bw">
+                                        <rect key="frame" x="2" y="9.5" width="31.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="12"/>
+                                        <color key="textColor" red="0.75294117647058822" green="0.42352941176470588" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrJ-L2-a07">
+                                        <rect key="frame" x="128" y="9" width="59" height="21"/>
+                                        <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="12"/>
+                                        <color key="textColor" red="0.75294117647058822" green="0.42352941176470588" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="فاصله دوره ها: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foz-SC-S8s">
+                                        <rect key="frame" x="189" y="9" width="59" height="21"/>
+                                        <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="10"/>
+                                        <color key="textColor" red="0.96470588235294119" green="0.44705882352941173" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="foz-SC-S8s" secondAttribute="bottom" id="Kc6-Uq-rH9"/>
+                                    <constraint firstItem="Z6Q-Jo-9Bw" firstAttribute="leading" secondItem="bnp-by-C9i" secondAttribute="leading" constant="2" id="MHI-bf-uRA"/>
+                                    <constraint firstAttribute="bottom" secondItem="jrJ-L2-a07" secondAttribute="bottom" id="QI2-dM-KIz"/>
+                                    <constraint firstItem="foz-SC-S8s" firstAttribute="height" secondItem="jrJ-L2-a07" secondAttribute="height" id="RLD-zd-DFw"/>
+                                    <constraint firstAttribute="height" constant="30" id="S9Z-Zl-zn4"/>
+                                    <constraint firstAttribute="trailing" secondItem="foz-SC-S8s" secondAttribute="trailing" constant="2" id="SBc-gd-gas"/>
+                                    <constraint firstItem="foz-SC-S8s" firstAttribute="leading" secondItem="jrJ-L2-a07" secondAttribute="trailing" constant="2" id="Xuj-hP-M4T"/>
+                                    <constraint firstItem="62B-PG-TzN" firstAttribute="leading" secondItem="Z6Q-Jo-9Bw" secondAttribute="trailing" constant="2" id="YLr-l9-WtK"/>
+                                    <constraint firstAttribute="bottom" secondItem="62B-PG-TzN" secondAttribute="bottom" id="Zrj-Cn-RQs"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z6Q-Jo-9Bw" secondAttribute="bottom" id="a7l-ms-Uat"/>
+                                    <constraint firstItem="foz-SC-S8s" firstAttribute="width" secondItem="jrJ-L2-a07" secondAttribute="width" id="rZy-OA-VHU"/>
+                                    <constraint firstAttribute="width" constant="250" id="tQN-2f-b8c"/>
+                                    <constraint firstItem="62B-PG-TzN" firstAttribute="height" secondItem="Z6Q-Jo-9Bw" secondAttribute="height" id="zeJ-ar-A9q"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490196078433" green="0.15294117647058825" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="bnp-by-C9i" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leading" id="4HE-IK-leQ"/>
-                            <constraint firstItem="bnp-by-C9i" firstAttribute="centerX" secondItem="LYe-Ie-eFM" secondAttribute="centerX" id="4dZ-AI-jEl"/>
-                            <constraint firstItem="Pij-3R-Gem" firstAttribute="top" secondItem="tzj-47-xBk" secondAttribute="bottom" constant="8" id="KIW-m0-fvT"/>
-                            <constraint firstItem="LYe-Ie-eFM" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leadingMargin" constant="75" id="MTu-g6-3jo"/>
-                            <constraint firstItem="bnp-by-C9i" firstAttribute="top" secondItem="tzj-47-xBk" secondAttribute="bottom" id="Y9K-H4-SWq"/>
-                            <constraint firstItem="h8x-iq-qEg" firstAttribute="top" secondItem="LYe-Ie-eFM" secondAttribute="bottom" constant="8" id="aUa-1R-WBU"/>
-                            <constraint firstItem="Pij-3R-Gem" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leadingMargin" id="afg-FP-ULC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="LYe-Ie-eFM" secondAttribute="trailing" constant="75" id="bwu-s8-u2j"/>
-                            <constraint firstItem="h8x-iq-qEg" firstAttribute="top" secondItem="NNn-hO-BGH" secondAttribute="bottom" constant="8" id="bzg-4c-rft"/>
-                            <constraint firstItem="NNn-hO-BGH" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leadingMargin" id="gT9-SQ-CPj"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="Pij-3R-Gem" secondAttribute="bottom" constant="7" id="hdj-TF-MLt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Pij-3R-Gem" secondAttribute="trailing" constant="1" id="qVG-qW-e40"/>
+                            <constraint firstItem="bnp-by-C9i" firstAttribute="centerX" secondItem="3jL-ug-kJB" secondAttribute="centerX" id="5hu-5p-7gs"/>
+                            <constraint firstAttribute="trailing" secondItem="LYe-Ie-eFM" secondAttribute="trailing" constant="7" id="7QL-uh-lE2"/>
+                            <constraint firstItem="NNn-hO-BGH" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leading" constant="7" id="Am9-Zm-1JH"/>
+                            <constraint firstItem="bnp-by-C9i" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leading" constant="62" id="FyI-av-ePf"/>
+                            <constraint firstItem="bnp-by-C9i" firstAttribute="top" secondItem="Z8B-7P-fkz" secondAttribute="bottom" constant="2" id="Lfb-vw-9ab"/>
+                            <constraint firstItem="h8x-iq-qEg" firstAttribute="top" secondItem="LYe-Ie-eFM" secondAttribute="bottom" constant="7" id="Rqh-R0-fff"/>
+                            <constraint firstItem="Pij-3R-Gem" firstAttribute="centerX" secondItem="3jL-ug-kJB" secondAttribute="centerX" id="SPj-vg-f0S"/>
+                            <constraint firstItem="h8x-iq-qEg" firstAttribute="top" secondItem="NNn-hO-BGH" secondAttribute="bottom" constant="7" id="Teh-uP-hje"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pij-3R-Gem" secondAttribute="trailing" constant="1" id="XL6-AU-rnH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bnp-by-C9i" secondAttribute="trailing" constant="47" id="ert-ME-cHc"/>
+                            <constraint firstItem="LYe-Ie-eFM" firstAttribute="height" secondItem="NNn-hO-BGH" secondAttribute="height" id="ha0-fu-bAf"/>
+                            <constraint firstItem="bnp-by-C9i" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leadingMargin" constant="46" id="kk9-Eu-KEX"/>
+                            <constraint firstItem="Pij-3R-Gem" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leadingMargin" id="nRo-hf-L1t"/>
+                            <constraint firstItem="Z8B-7P-fkz" firstAttribute="centerX" secondItem="3jL-ug-kJB" secondAttribute="centerX" constant="-0.5" id="oDZ-tf-GrT"/>
+                            <constraint firstItem="Pij-3R-Gem" firstAttribute="centerY" secondItem="3jL-ug-kJB" secondAttribute="centerY" id="tth-hJ-aHW"/>
+                            <constraint firstAttribute="trailing" secondItem="bnp-by-C9i" secondAttribute="trailing" constant="63" id="vAf-gg-2rG"/>
+                            <constraint firstItem="Pij-3R-Gem" firstAttribute="top" secondItem="bnp-by-C9i" secondAttribute="bottom" constant="8" id="wlL-SB-kOJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="ohy-aj-S58"/>
@@ -229,29 +218,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="۳۱-اردیبهشت-۹۶" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcL-4K-30U">
-                                <rect key="frame" x="108" y="323" width="160" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۳۱-اردیبهشت-۹۶" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcL-4K-30U">
+                                <rect key="frame" x="132.5" y="319" width="111" height="29"/>
                                 <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="17"/>
-                                <color key="textColor" red="0.20701183931862355" green="0.35386291974176121" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.83921568627450982" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note" translatesAutoresizingMaskIntoConstraints="NO" id="ZYr-Xh-JRd">
+                                <rect key="frame" x="181" y="356" width="12" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="12" id="JdS-bk-ue9"/>
+                                    <constraint firstAttribute="height" constant="13" id="lgJ-Mj-hrd"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.13725490196078433" green="0.15294117647058825" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="ZYr-Xh-JRd" firstAttribute="top" secondItem="RcL-4K-30U" secondAttribute="bottom" constant="8" id="20c-ZA-v67"/>
                             <constraint firstItem="RcL-4K-30U" firstAttribute="centerX" secondItem="Mwr-Ne-ucM" secondAttribute="centerX" id="Ds0-2h-TGd"/>
                             <constraint firstItem="RcL-4K-30U" firstAttribute="centerY" secondItem="Mwr-Ne-ucM" secondAttribute="centerY" id="eRG-HC-7sQ"/>
+                            <constraint firstItem="ZYr-Xh-JRd" firstAttribute="centerX" secondItem="Mwr-Ne-ucM" secondAttribute="centerX" id="yrz-vX-QL1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="جزییات دوره" id="igF-NP-KuO"/>
                     <connections>
                         <outlet property="dayLabel" destination="RcL-4K-30U" id="Oj5-3y-Idk"/>
+                        <outlet property="noteImage" destination="ZYr-Xh-JRd" id="ctJ-Hr-Z8B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95H-TV-YAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1044" y="-0.44977511244377816"/>
         </scene>
-        <!--Log Period-->
+        <!--یادداشت-->
         <scene sceneID="OtR-b9-Y1k">
             <objects>
                 <viewController storyboardIdentifier="LogPeriodVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="myC-d7-ZXg" customClass="LogPeriodViewController" customModule="PeriodTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -284,17 +283,25 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="توضیحات را در باکس زیر وارد کنید" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-pS-ciR">
                                 <rect key="frame" x="16" y="98" width="343" height="54"/>
                                 <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="16"/>
-                                <color key="textColor" red="0.98709518984875155" green="1" blue="0.98572154153680902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.97254901960784312" green="0.69411764705882351" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeG-hr-h38">
+                                <rect key="frame" x="7" y="71" width="72" height="17"/>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="10"/>
+                                <color key="textColor" red="0.96470588235294119" green="0.44705882352941173" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.33092784371814743" green="0.58960965441288071" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.13725490196078433" green="0.15294117647058825" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dhu-T7-ZOU" firstAttribute="leading" secondItem="Ae4-BN-YsT" secondAttribute="leading" id="78V-8f-aq4"/>
                             <constraint firstItem="sqB-aN-hKx" firstAttribute="top" secondItem="Ae4-BN-YsT" secondAttribute="bottom" constant="150" id="9Vj-CN-4tX"/>
                             <constraint firstItem="ljv-pS-ciR" firstAttribute="leading" secondItem="cSd-SP-Kon" secondAttribute="leadingMargin" id="FWd-1f-5xr"/>
                             <constraint firstItem="ljv-pS-ciR" firstAttribute="trailing" secondItem="cSd-SP-Kon" secondAttribute="trailingMargin" id="I8a-21-ae6"/>
+                            <constraint firstItem="yeG-hr-h38" firstAttribute="leading" secondItem="cSd-SP-Kon" secondAttribute="leading" constant="7" id="NGV-PY-Mb9"/>
                             <constraint firstItem="dhu-T7-ZOU" firstAttribute="bottom" secondItem="Ae4-BN-YsT" secondAttribute="bottom" id="Uus-hE-rZ0"/>
+                            <constraint firstItem="yeG-hr-h38" firstAttribute="top" secondItem="Txr-4m-zaC" secondAttribute="bottom" constant="7" id="b84-YG-Z3d"/>
                             <constraint firstItem="Ae4-BN-YsT" firstAttribute="top" secondItem="Txr-4m-zaC" secondAttribute="bottom" constant="150" id="i2B-zI-4aq"/>
                             <constraint firstItem="Ae4-BN-YsT" firstAttribute="leading" secondItem="cSd-SP-Kon" secondAttribute="leadingMargin" id="oUU-r0-Yvc"/>
                             <constraint firstItem="Ae4-BN-YsT" firstAttribute="trailing" secondItem="cSd-SP-Kon" secondAttribute="trailingMargin" id="rh1-4v-jJ2"/>
@@ -302,8 +309,9 @@
                             <constraint firstItem="ljv-pS-ciR" firstAttribute="top" secondItem="Txr-4m-zaC" secondAttribute="bottom" constant="34" id="zeY-Jt-eVi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Log Period" id="3Dh-yr-Lop"/>
+                    <navigationItem key="navigationItem" title="یادداشت" id="3Dh-yr-Lop"/>
                     <connections>
+                        <outlet property="dateLabel" destination="yeG-hr-h38" id="edR-l4-aEh"/>
                         <outlet property="navItem" destination="3Dh-yr-Lop" id="uyS-jt-5K3"/>
                         <outlet property="noteTextView" destination="Ae4-BN-YsT" id="8xO-LL-JHb"/>
                     </connections>
@@ -375,6 +383,6 @@
     <resources>
         <image name="calendar" width="16" height="16"/>
         <image name="cycle" width="16" height="16"/>
-        <image name="start_date" width="16" height="16"/>
+        <image name="note" width="32" height="32"/>
     </resources>
 </document>

@@ -40,12 +40,12 @@ UIPickerViewDelegate , UIPickerViewDataSource{
     @IBAction func selectPeriodDates(_ sender: Any) {
         if setupState == .SELECT_PERIOD_DATES {
             setupState = .SELECT_DAY
-            periodDatesButton.setTitle("Period Dates", for: .normal)
+            periodDatesButton.setTitle("ثبت پریودی", for: .normal)
             dayOfMonth = 0
             collectionView.reloadData()
         }else{
             setupState = .SELECT_PERIOD_DATES
-            periodDatesButton.setTitle("Done", for: .normal)
+            periodDatesButton.setTitle("اتمام", for: .normal)
             dayOfMonth = 0
             collectionView.reloadData()
         }
@@ -73,6 +73,9 @@ UIPickerViewDelegate , UIPickerViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        checkSetupCompeleted()
+        self.automaticallyAdjustsScrollViewInsets = false
+        
         collectionView.backgroundColor = UIColor(white: 1, alpha: 0)
         collectionView.dataSource = self
         
@@ -80,12 +83,31 @@ UIPickerViewDelegate , UIPickerViewDataSource{
         dateComponents = calendar.dateComponents([.year, .month, .day], from: Date())
         dateComponents.day = 1
         navItem.title = "\(MONTH[dateComponents.month! - 1]) - \(Int(dateComponents.year!))"
-        navItem.leftBarButtonItem = UIBarButtonItem(title: "قبل", style: .plain, target: self, action: #selector(preMonth))
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "بعد", style: .plain, target: self, action: #selector(nextMonth))
         navItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "IRANSans(FaNum)", size: 15)!], for: .normal)
-        navItem.rightBarButtonItem = UIBarButtonItem(title: "بعد", style: .plain, target: self, action: #selector(nextMonth))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "قبل", style: .plain, target: self, action: #selector(preMonth))
         navItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "IRANSans(FaNum)", size: 15)!], for: .normal)
         
         setupUserSavedData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        dayOfMonth = 0
+        collectionView.reloadData()
+    }
+    
+    func checkSetupCompeleted() {
+        if UserDefaults.standard.double(forKey: "period_begin_date") == 0
+            || UserDefaults.standard.integer(forKey: "SELECT_PERIOD_DISTANCE") == 0
+            || UserDefaults.standard.integer(forKey: "SELECT_PERIOD_LENGHT") == 0 {
+            
+            UserDefaults.standard.set(0.0, forKey: "period_begin_date")
+            UserDefaults.standard.set(0, forKey: "SELECT_PERIOD_LENGHT")
+            UserDefaults.standard.set(0, forKey: "SELECT_PERIOD_DISTANCE")
+            
+        }
     }
     
     func preMonth() {
@@ -105,6 +127,10 @@ UIPickerViewDelegate , UIPickerViewDataSource{
             break
             
         case .SELECT_PERIOD_LENGHT:
+            
+            UserDefaults.standard.set(0.0, forKey: "period_begin_date")
+            UserDefaults.standard.set(0, forKey: "SELECT_PERIOD_LENGHT")
+            UserDefaults.standard.set(0, forKey: "SELECT_PERIOD_DISTANCE")
             
             setupState = .SELECT_DAY
             navItem.title = MONTH[dateComponents.month! - 1]
@@ -152,7 +178,7 @@ UIPickerViewDelegate , UIPickerViewDataSource{
             UserDefaults.standard.set((pickerView?.selectedRow(inComponent: 0))! + 14, forKey: "SELECT_PERIOD_DISTANCE")
             setupState = .SELECT_DAY
             pickerView?.removeFromSuperview()
-            navItem.title = MONTH[dateComponents.month! - 1]
+            navItem.title = "\(MONTH[dateComponents.month! - 1]) - \(Int(dateComponents.year!))"
             dayOfMonth = 0
             collectionView.reloadData()
             setupUserSavedData()
@@ -186,6 +212,13 @@ UIPickerViewDelegate , UIPickerViewDataSource{
             cell.date = nil
         }
         
+        
+        if cell.date != nil && realm.objects(PeriodNoteModel.self).filter("timestamp = \(String(describing: calendar.startOfDay(for: cell.date!).timeIntervalSince1970))").count > 0 {
+            cell.noteImage.isHidden = false
+        }else{
+            cell.noteImage.isHidden = true
+        }
+        
         return cell
     }
     
@@ -193,13 +226,22 @@ UIPickerViewDelegate , UIPickerViewDataSource{
         let cell : DayViewCell = collectionView.cellForItem(at: indexPath) as! DayViewCell
         if cell.date != nil && UserDefaults.standard.double(forKey: "period_begin_date") == 0 && setupState != .SELECT_PERIOD_DATES{
             
-            let dayTimePeriodFormatter = DateFormatter()
-            dayTimePeriodFormatter.dateFormat = "MMM dd YYYY hh:mm a"
-            dayTimePeriodFormatter.calendar = calendar
+            let dateComponents = calendar.dateComponents([.year , .month , .day], from: cell.date!)
             
-            let dateString = dayTimePeriodFormatter.string(from: cell.date!)
+            let dateString = "\(Int(dateComponents.day!)) - \(MONTH[dateComponents.month! - 1]) - \(Int(dateComponents.year!))"
             
-            let alert = UIAlertController(title: "ثبت تاریخ شروع دوره ماهانه", message: dateString, preferredStyle: UIAlertControllerStyle.alert)
+            let attributedString = NSAttributedString(string: "ثبت تاریخ شروع دوره ماهانه", attributes: [
+                NSFontAttributeName : UIFont(name: "IRANSans(FaNum)", size: 17)
+                ])
+            
+            let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert.setValue(attributedString, forKey: "attributedTitle")
+            alert.setValue(NSAttributedString(string: dateString, attributes: [
+                NSFontAttributeName : UIFont(name: "IRANSans(FaNum)", size: 13)
+                ])
+, forKey: "attributedMessage")
+            
             alert.addAction(UIAlertAction(title: "بله", style: UIAlertActionStyle.default, handler: {action in self.setupBeginPeriod(date: cell.date!)}))
             alert.addAction(UIAlertAction(title: "خیر", style: UIAlertActionStyle.cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -226,12 +268,14 @@ UIPickerViewDelegate , UIPickerViewDataSource{
             }
         }else{
             
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let destinationVC = storyboard.instantiateViewController(withIdentifier: "NewsDetailsVCID")
-            
-            LogPeriodViewController.timestamp = Calendar.current.startOfDay(for: cell.date!).timeIntervalSince1970
-            
-            present(destinationVC, animated: true, completion: nil)
+            if cell.date != nil {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let destinationVC = storyboard.instantiateViewController(withIdentifier: "NewsDetailsVCID")
+                
+                LogPeriodViewController.timestamp = Calendar.current.startOfDay(for: cell.date!).timeIntervalSince1970
+                
+                present(destinationVC, animated: true, completion: nil)
+            }
         }
     }
     
@@ -253,9 +297,9 @@ UIPickerViewDelegate , UIPickerViewDataSource{
         UserDefaults.standard.set(date.timeIntervalSince1970, forKey: "period_begin_date")
         
         pickerView = UIPickerView()
+        pickerView?.backgroundColor = Utility.uicolorFromHex(rgbValue: 0x23272F)
         pickerView?.delegate = self
         pickerView?.dataSource = self
-        pickerView?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         pickerView?.frame.size.height = self.view.frame.height
         pickerView?.center = self.view.center
         navItem.title = "طول مدت پریودی"
@@ -298,7 +342,7 @@ UIPickerViewDelegate , UIPickerViewDataSource{
         default:
             titleData = "\(row + 3) روز"
         }
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 26.0)!,NSForegroundColorAttributeName:UIColor.black])
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "IRANSans(FaNum)", size: 20.0)!,NSForegroundColorAttributeName:UIColor.black])
         pickerLabel!.attributedText = myTitle
         pickerLabel!.textAlignment = .center
         
@@ -318,6 +362,7 @@ UIPickerViewDelegate , UIPickerViewDataSource{
             cell.date = nil
             cell.dayOfMonthLabel.textColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
         }else if indexPath.item > 6{
+            
             cell.dayOfMonthLabel.textColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
             dayOfMonth += 1
             var cellDateComponnet : DateComponents = dateComponents
@@ -339,7 +384,9 @@ UIPickerViewDelegate , UIPickerViewDataSource{
             }
             
             if setupState != .SELECT_PERIOD_DATES {
-                if cell.date != nil && UserDefaults.standard.double(forKey: "period_begin_date") != 0{
+                if cell.date != nil && UserDefaults.standard.double(forKey: "period_begin_date") != 0
+                && UserDefaults.standard.integer(forKey: "SELECT_PERIOD_DISTANCE") != 0
+                && UserDefaults.standard.integer(forKey: "SELECT_PERIOD_LENGHT") != 0{
                     let date : Date = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: "period_begin_date"))
                     var difference = Calendar.current.dateComponents([.day], from: date, to: cell.date!).day ?? 0
                     let diff = difference
@@ -358,15 +405,15 @@ UIPickerViewDelegate , UIPickerViewDataSource{
                     
                     
                     if difference < periodLength && diff >= 0{
-                        detailLayer.fillColor = UIColor.red.cgColor
+                        detailLayer.fillColor = Utility.uicolorFromHex(rgbValue: 0xE57373).cgColor
                         cell.layer.addSublayer(detailLayer)
                     }else if difference < periodDistance - 7{
                         if difference > periodDistance / 2 - 3 && difference < periodDistance / 2 + 3{
-                            detailLayer.fillColor = UIColor.blue.cgColor
+                            detailLayer.fillColor = Utility.uicolorFromHex(rgbValue: 0x0097A7).cgColor
                             cell.layer.addSublayer(detailLayer)
                         }
                     }else if difference < periodDistance{
-                        detailLayer.fillColor = UIColor.gray.cgColor
+                        detailLayer.fillColor = Utility.uicolorFromHex(rgbValue: 0xBDBDBD).cgColor
                         cell.layer.addSublayer(detailLayer)
                     }else{
                         detailLayer.removeFromSuperlayer()
@@ -374,7 +421,7 @@ UIPickerViewDelegate , UIPickerViewDataSource{
                 }
             }
             if realm.objects(PeriodDateModel.self).filter("timestamp = \(String(describing: cell.date!.timeIntervalSince1970))").count > 0 {
-                cell.dayOfMonthLabel.textColor = UIColor.red
+                cell.dayOfMonthLabel.textColor = Utility.uicolorFromHex(rgbValue: 0xE53935)
             }
         }
         

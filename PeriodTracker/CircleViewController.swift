@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
+    
+    let realm = try! Realm()
     
     var points : [CGPoint] = []
     var selectDayLayer:CAShapeLayer?
@@ -23,6 +26,8 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
     static var saveNoteState = false
     
     @IBOutlet weak var dayLabel: UILabel!
+    
+    @IBOutlet weak var noteImage: UIImageView!
     
     let periodLayer = CAShapeLayer()
     let fertileLayer = CAShapeLayer()
@@ -44,8 +49,16 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
             let tabBarController: UITabBarController = (appDelegate!.window!.rootViewController as? UITabBarController)!
             tabBarController.selectedIndex = 0
             
-            let alert = UIAlertController(title: "اطلاعات مورد نیاز را وارد کنید", message: "لطفا تاریخ شروع آخرین پریودیتان را وارد کنید", preferredStyle: .alert)
+            let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
             
+            alert.setValue(NSAttributedString(string: "اطلاعات مورد نیاز را وارد کنید", attributes: [
+                NSFontAttributeName : UIFont(name: "IRANSans(FaNum)", size: 17)
+                ])
+                , forKey: "attributedTitle")
+            alert.setValue(NSAttributedString(string: "لطفا تاریخ شروع آخرین پریودیتان را وارد کنید", attributes: [
+                NSFontAttributeName : UIFont(name: "IRANSans(FaNum)", size: 13)
+                ])
+                , forKey: "attributedMessage")
             alert.addAction(UIAlertAction(title: "باشه", style: .cancel , handler: nil))
             
             present(alert, animated: true , completion: nil)
@@ -143,11 +156,11 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
         
         selectDayLayer = CAShapeLayer()
         selectDayLayer?.path = circlePath.cgPath
-        selectDayLayer?.fillColor = UIColor.black.cgColor
+        selectDayLayer?.fillColor = Utility.uicolorFromHex(rgbValue: 0x000000).cgColor
         
         textLayer = CATextLayer()
         textLayer?.string = "\(selectedDay)"
-        textLayer?.foregroundColor = UIColor.white.cgColor
+        textLayer?.foregroundColor = Utility.uicolorFromHex(rgbValue: 0xFFD600).cgColor
         textLayer?.font = UIFont(name: "IRANSans(FaNum)", size: 15)
         textLayer?.fontSize = 15
         textLayer?.alignmentMode = kCAAlignmentCenter
@@ -159,6 +172,13 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
         let date = Calendar.current.date(byAdding: .day, value: selectedDay - 1 , to: beginPeriodDate!)
         let dateComponents = Calendar(identifier: .persian).dateComponents([.year , .month , .day], from: date!)
         timestamp = Calendar.current.startOfDay(for: date!).timeIntervalSince1970
+        
+        if realm.objects(PeriodNoteModel.self).filter("timestamp = \(timestamp!)").count > 0 {
+            noteImage.isHidden = false
+        }else{
+            noteImage.isHidden = true
+        }
+        
         dayLabel.text = "\(Int (dateComponents.year!)) - \(MONTH[dateComponents.month! - 1]) - \(Int (dateComponents.day!))"
     }
     
@@ -177,7 +197,7 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = circlePath.cgPath
         shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor.gray.cgColor
+        shapeLayer.strokeColor = UIColor.white.cgColor
         shapeLayer.lineWidth = 25.0
         shapeLayer.lineCap = kCALineCapRound
         
@@ -196,7 +216,7 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
         
         periodLayer.path = circlePath.cgPath
         periodLayer.fillColor = UIColor.clear.cgColor
-        periodLayer.strokeColor = UIColor.red.cgColor
+        periodLayer.strokeColor = Utility.uicolorFromHex(rgbValue: 0xE57373).cgColor
         periodLayer.lineWidth = 25.0
         periodLayer.lineCap = kCALineCapRound
         periodLayer.contents = UIImage(named: "cloud")?.cgImage
@@ -212,7 +232,7 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
         
         fertileLayer.path = circlePath.cgPath
         fertileLayer.fillColor = UIColor.clear.cgColor
-        fertileLayer.strokeColor = UIColor.cyan.cgColor
+        fertileLayer.strokeColor = Utility.uicolorFromHex(rgbValue: 0x0097A7).cgColor
         fertileLayer.lineWidth = 25.0
         fertileLayer.lineCap = kCALineCapRound
         fertileLayer.contents = UIImage(named: "cloud")?.cgImage
@@ -229,7 +249,7 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
         
         cloudLayer.path = circlePath.cgPath
         cloudLayer.fillColor = UIColor.clear.cgColor
-        cloudLayer.strokeColor = UIColor.blue.cgColor
+        cloudLayer.strokeColor = Utility.uicolorFromHex(rgbValue: 0xBDBDBD).cgColor
         cloudLayer.lineWidth = 25.0
         cloudLayer.lineCap = kCALineCapRound
         cloudLayer.contents = UIImage(named: "cloud")?.cgImage
