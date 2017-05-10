@@ -30,10 +30,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" semanticContentAttribute="forceRightToLeft" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pij-3R-Gem">
-                                <rect key="frame" x="16" y="183" width="342" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="ie3-wk-3MA"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="155" width="342" height="398"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="Jym-Oc-3s8">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -97,7 +94,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8B-7P-fkz">
-                                <rect key="frame" x="112" y="122" width="150" height="21"/>
+                                <rect key="frame" x="112" y="94" width="150" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="caG-GK-8Jr"/>
                                     <constraint firstAttribute="width" constant="150" id="yvo-oK-xNX"/>
@@ -107,16 +104,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnp-by-C9i">
-                                <rect key="frame" x="62" y="145" width="250" height="30"/>
+                                <rect key="frame" x="62" y="117" width="250" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="طول مدت: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62B-PG-TzN">
-                                        <rect key="frame" x="35.5" y="9.5" width="44" height="20.5"/>
+                                        <rect key="frame" x="36" y="9" width="45" height="21"/>
                                         <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="10"/>
                                         <color key="textColor" red="0.96470588235294119" green="0.44705882352941173" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6Q-Jo-9Bw">
-                                        <rect key="frame" x="2" y="9.5" width="31.5" height="20.5"/>
+                                        <rect key="frame" x="2" y="9" width="32" height="21"/>
                                         <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="12"/>
                                         <color key="textColor" red="0.75294117647058822" green="0.42352941176470588" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -155,6 +152,7 @@
                         <constraints>
                             <constraint firstItem="bnp-by-C9i" firstAttribute="centerX" secondItem="3jL-ug-kJB" secondAttribute="centerX" id="5hu-5p-7gs"/>
                             <constraint firstAttribute="trailing" secondItem="LYe-Ie-eFM" secondAttribute="trailing" constant="7" id="7QL-uh-lE2"/>
+                            <constraint firstItem="Z8B-7P-fkz" firstAttribute="top" secondItem="tzj-47-xBk" secondAttribute="bottom" constant="30" id="AC9-56-tCb"/>
                             <constraint firstItem="NNn-hO-BGH" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leading" constant="7" id="Am9-Zm-1JH"/>
                             <constraint firstItem="bnp-by-C9i" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leading" constant="62" id="FyI-av-ePf"/>
                             <constraint firstItem="bnp-by-C9i" firstAttribute="top" secondItem="Z8B-7P-fkz" secondAttribute="bottom" constant="2" id="Lfb-vw-9ab"/>
@@ -162,12 +160,12 @@
                             <constraint firstItem="Pij-3R-Gem" firstAttribute="centerX" secondItem="3jL-ug-kJB" secondAttribute="centerX" id="SPj-vg-f0S"/>
                             <constraint firstItem="h8x-iq-qEg" firstAttribute="top" secondItem="NNn-hO-BGH" secondAttribute="bottom" constant="7" id="Teh-uP-hje"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pij-3R-Gem" secondAttribute="trailing" constant="1" id="XL6-AU-rnH"/>
+                            <constraint firstItem="NNn-hO-BGH" firstAttribute="top" secondItem="Pij-3R-Gem" secondAttribute="bottom" constant="20" id="YGy-St-54n"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bnp-by-C9i" secondAttribute="trailing" constant="47" id="ert-ME-cHc"/>
                             <constraint firstItem="LYe-Ie-eFM" firstAttribute="height" secondItem="NNn-hO-BGH" secondAttribute="height" id="ha0-fu-bAf"/>
                             <constraint firstItem="bnp-by-C9i" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leadingMargin" constant="46" id="kk9-Eu-KEX"/>
                             <constraint firstItem="Pij-3R-Gem" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leadingMargin" id="nRo-hf-L1t"/>
                             <constraint firstItem="Z8B-7P-fkz" firstAttribute="centerX" secondItem="3jL-ug-kJB" secondAttribute="centerX" constant="-0.5" id="oDZ-tf-GrT"/>
-                            <constraint firstItem="Pij-3R-Gem" firstAttribute="centerY" secondItem="3jL-ug-kJB" secondAttribute="centerY" id="tth-hJ-aHW"/>
                             <constraint firstAttribute="trailing" secondItem="bnp-by-C9i" secondAttribute="trailing" constant="63" id="vAf-gg-2rG"/>
                             <constraint firstItem="Pij-3R-Gem" firstAttribute="top" secondItem="bnp-by-C9i" secondAttribute="bottom" constant="8" id="wlL-SB-kOJ"/>
                         </constraints>
@@ -191,7 +189,7 @@
             <objects>
                 <navigationController id="8X1-9u-hUJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="دوره" image="cycle" id="PEk-Q6-hjY"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="KRp-wt-wq0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KRp-wt-wq0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -219,13 +217,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۳۱-اردیبهشت-۹۶" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcL-4K-30U">
-                                <rect key="frame" x="132.5" y="319" width="111" height="29"/>
+                                <rect key="frame" x="132" y="319" width="111" height="29"/>
                                 <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.83921568627450982" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note" translatesAutoresizingMaskIntoConstraints="NO" id="ZYr-Xh-JRd">
-                                <rect key="frame" x="181" y="356" width="12" height="13"/>
+                                <rect key="frame" x="181.5" y="356" width="12" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="12" id="JdS-bk-ue9"/>
                                     <constraint firstAttribute="height" constant="13" id="lgJ-Mj-hrd"/>
@@ -345,7 +343,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="792-HP-ZxA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="تقویم" image="calendar" id="o9k-Hx-9As"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gGQ-5J-q4n">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gGQ-5J-q4n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -366,7 +364,7 @@
             <objects>
                 <navigationController storyboardIdentifier="NewsDetailsVCID" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="atD-l6-myK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="baQ-iY-erP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="baQ-iY-erP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
