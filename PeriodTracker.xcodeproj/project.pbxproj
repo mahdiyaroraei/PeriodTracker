@@ -13,6 +13,7 @@
 		5501E0AA1EA7399400E24F63 /* IRANSans(FaNum)_UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5501E0A51EA7399400E24F63 /* IRANSans(FaNum)_UltraLight.ttf */; };
 		5501E0AB1EA7399400E24F63 /* IRANSans(FaNum).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5501E0A61EA7399400E24F63 /* IRANSans(FaNum).ttf */; };
 		5509361A1EBA1AA40015C251 /* PeriodNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936191EBA1AA40015C251 /* PeriodNoteModel.swift */; };
+		550CC20E1EC89D0C00CD5154 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550CC20D1EC89D0C00CD5154 /* BuyViewController.swift */; };
 		555BF6711EB78CBF0035A9BD /* LogPeriodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555BF6701EB78CBF0035A9BD /* LogPeriodViewController.swift */; };
 		558BC9161EBAE610000D66FF /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558BC9141EBAE610000D66FF /* Realm.framework */; };
 		558BC9171EBAE610000D66FF /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 558BC9141EBAE610000D66FF /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -55,6 +56,7 @@
 		5501E0A51EA7399400E24F63 /* IRANSans(FaNum)_UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSans(FaNum)_UltraLight.ttf"; path = "../../Google Drive/IRANSans Fonts/IRANSans4/IRANSans4/Farsi_numerals_(Non Standard)/IRANSans(FaNum)_UltraLight.ttf"; sourceTree = "<group>"; };
 		5501E0A61EA7399400E24F63 /* IRANSans(FaNum).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSans(FaNum).ttf"; path = "../../Google Drive/IRANSans Fonts/IRANSans4/IRANSans4/Farsi_numerals_(Non Standard)/IRANSans(FaNum).ttf"; sourceTree = "<group>"; };
 		550936191EBA1AA40015C251 /* PeriodNoteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodNoteModel.swift; sourceTree = "<group>"; };
+		550CC20D1EC89D0C00CD5154 /* BuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
 		555BF6701EB78CBF0035A9BD /* LogPeriodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogPeriodViewController.swift; sourceTree = "<group>"; };
 		558BC90B1EBAE1B0000D66FF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/Period_Tracker-dpgnhbomjqhthchaemwlmguskqhn/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		558BC90C1EBAE1B0000D66FF /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../Library/Developer/Xcode/DerivedData/Period_Tracker-dpgnhbomjqhthchaemwlmguskqhn/Build/Products/Debug-iphonesimulator/Realm/Realm.framework"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				55C17D021E7C728300B844F2 /* ImagesViewController.swift */,
 				55D1EC981E864C5D005C1CA3 /* CircleViewController.swift */,
 				555BF6701EB78CBF0035A9BD /* LogPeriodViewController.swift */,
+				550CC20D1EC89D0C00CD5154 /* BuyViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 			files = (
 				5509361A1EBA1AA40015C251 /* PeriodNoteModel.swift in Sources */,
 				55C17D031E7C728300B844F2 /* ImagesViewController.swift in Sources */,
+				550CC20E1EC89D0C00CD5154 /* BuyViewController.swift in Sources */,
 				55CF92FF1E771B7800BC772B /* AppDelegate.swift in Sources */,
 				55D1EC991E864C5D005C1CA3 /* CircleViewController.swift in Sources */,
 				55A487F81EBF5E4600D1A122 /* Utility.swift in Sources */,
