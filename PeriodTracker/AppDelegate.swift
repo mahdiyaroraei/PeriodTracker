@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,6 +33,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // change navigation item title color
         navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white , NSFontAttributeName: UIFont(name: "IRANSans(FaNum)", size: 15)!]
+        
+        let keychain = KeychainSwift()
+        if keychain.getBool("buy") != nil && keychain.getBool("buy")! {
+            
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "BuyedController")
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
         
         return true
     }

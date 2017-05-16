@@ -7,6 +7,8 @@ use_frameworks!
 
 pod ‘Alamofire’
 pod 'RealmSwift'
+pod 'AMPopTip'
+pod 'KeychainSwift', '~> 8.0'
 
 
 # Pods for Test

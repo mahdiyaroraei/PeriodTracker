@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AMPopTip.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>KeychainSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,7 +37,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>274F380CEDCEA42A21DC8EA76E93A8BC</key>
+		<key>29AFB922CA4FB57573E98BBCC7BFD03A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>38ACA430605AFB4229712A18BDDF5086</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4DCE4EE761F61B36C32443A46A5CD844</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>77326CBEB7A2A0D0D7254E785F5B8872</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +62,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E37A1A67295406E71D47DD4BC61A7AD1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E8BD31B977C282340888111561D5F93A</key>
+		<key>A406E78BB0A2D11548A4B5AB13C56142</key>
 		<dict>
 			<key>primary</key>
 			<true/>

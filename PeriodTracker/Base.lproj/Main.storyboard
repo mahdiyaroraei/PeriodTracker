@@ -15,6 +15,12 @@
         <array key="IRANSans(FaNum)_Bold.ttf">
             <string>IRANSansFaNum-Bold</string>
         </array>
+        <array key="IRANSans(FaNum)_Light.ttf">
+            <string>IRANSansFaNum-Light</string>
+        </array>
+        <array key="IRANSans(FaNum)_UltraLight.ttf">
+            <string>IRANSansFaNum-UltraLight</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Title-->
@@ -248,6 +254,142 @@
             </objects>
             <point key="canvasLocation" x="1044" y="-0.44977511244377816"/>
         </scene>
+        <!--تنظیمات-->
+        <scene sceneID="NtA-3t-LLo">
+            <objects>
+                <viewController id="kOT-kb-Lcz" customClass="SettingViewController" customModule="PeriodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a1O-lN-U6Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="Egd-aD-X9w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Ij-mC-5Hs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mahdiyar" translatesAutoresizingMaskIntoConstraints="NO" id="ryg-Sy-ChF">
+                                <rect key="frame" x="67" y="82" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Obf-9i-vuO"/>
+                                    <constraint firstAttribute="width" constant="240" id="wA1-ZK-aYR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مهدیار اورعی" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDX-7Q-v97">
+                                <rect key="frame" x="51" y="218" width="274" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="274" id="DW6-Nh-QXx"/>
+                                    <constraint firstAttribute="height" constant="21" id="RGT-qH-P1r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="با عضویت در کانال تلگرام از کد های رایگان اپلیکیشن ما زودتر از بقیه مطلع شوید" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3x-La-jhl">
+                                <rect key="frame" x="51" y="309" width="274" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="274" id="fRv-7U-pVp"/>
+                                    <constraint firstAttribute="height" constant="49" id="prk-xP-hE2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="11"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="برای استفاده از این خرید در گوشی دیگر یا برای Restore کردن گوشی ابتدا باید دکمه زیر را فشار دهید" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r82-ZZ-Uv1">
+                                <rect key="frame" x="51" y="514" width="274" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="9K3-da-uHn"/>
+                                    <constraint firstAttribute="width" constant="274" id="Ur6-fq-3z2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="11"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfC-8t-vUE">
+                                <rect key="frame" x="110" y="366" width="156" height="30"/>
+                                <color key="backgroundColor" red="0.33353583648922824" green="0.60178635222188959" blue="0.76857947335025378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="Xdq-tm-AkO"/>
+                                    <constraint firstAttribute="height" constant="30" id="kE6-o3-pwM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="13"/>
+                                <state key="normal" title="عضویت در کانال تلگرام">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="telegramChannel:" destination="kOT-kb-Lcz" eventType="touchUpInside" id="25v-qx-HDR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4J-t4-sLX">
+                                <rect key="frame" x="110" y="571" width="156" height="30"/>
+                                <color key="backgroundColor" red="0.76857947335025378" green="0.35869642857904882" blue="0.2754023631446858" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PjX-wz-xle"/>
+                                    <constraint firstAttribute="width" constant="156" id="rAe-S7-TRq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="17"/>
+                                <state key="normal" title="حذف لایسنس">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="removeLicense:" destination="kOT-kb-Lcz" eventType="touchUpInside" id="sMP-UH-Fnj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wk0-6s-dNh">
+                                <rect key="frame" x="110" y="415" width="156" height="30"/>
+                                <color key="backgroundColor" red="0.33353583650000002" green="0.60178635219999999" blue="0.76857947339999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JYQ-44-eGC"/>
+                                    <constraint firstAttribute="width" constant="156" id="Pck-ap-js4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="13"/>
+                                <state key="normal" title="ارتباط با پشتیبانی">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="telegramSupport:" destination="kOT-kb-Lcz" eventType="touchUpInside" id="FsW-hJ-9pc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13725490196078433" green="0.15294117647058825" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Egd-aD-X9w" firstAttribute="top" secondItem="i4J-t4-sLX" secondAttribute="bottom" constant="17" id="4fz-1n-ZtY"/>
+                            <constraint firstItem="i4J-t4-sLX" firstAttribute="centerX" secondItem="9Ij-mC-5Hs" secondAttribute="centerX" id="72C-et-ED0"/>
+                            <constraint firstItem="ryg-Sy-ChF" firstAttribute="centerX" secondItem="9Ij-mC-5Hs" secondAttribute="centerX" id="7uC-xu-NHJ"/>
+                            <constraint firstItem="i4J-t4-sLX" firstAttribute="top" secondItem="r82-ZZ-Uv1" secondAttribute="bottom" constant="8" id="8C5-kN-9wK"/>
+                            <constraint firstItem="r82-ZZ-Uv1" firstAttribute="centerX" secondItem="9Ij-mC-5Hs" secondAttribute="centerX" id="94K-Pr-vzq"/>
+                            <constraint firstItem="bDX-7Q-v97" firstAttribute="centerX" secondItem="9Ij-mC-5Hs" secondAttribute="centerX" id="I25-eT-LJe"/>
+                            <constraint firstItem="B3x-La-jhl" firstAttribute="centerY" secondItem="9Ij-mC-5Hs" secondAttribute="centerY" id="Kfm-Sl-ZUA"/>
+                            <constraint firstItem="bDX-7Q-v97" firstAttribute="top" secondItem="ryg-Sy-ChF" secondAttribute="bottom" constant="8" id="Qo2-g6-15Y"/>
+                            <constraint firstItem="OfC-8t-vUE" firstAttribute="top" secondItem="B3x-La-jhl" secondAttribute="bottom" constant="8" id="cwL-iR-VZa"/>
+                            <constraint firstItem="wk0-6s-dNh" firstAttribute="centerX" secondItem="9Ij-mC-5Hs" secondAttribute="centerX" id="eLY-A4-5Xo"/>
+                            <constraint firstItem="OfC-8t-vUE" firstAttribute="centerX" secondItem="9Ij-mC-5Hs" secondAttribute="centerX" id="fDd-Nu-cZg"/>
+                            <constraint firstItem="ryg-Sy-ChF" firstAttribute="top" secondItem="a1O-lN-U6Z" secondAttribute="bottom" constant="18" id="gFE-eG-MYS"/>
+                            <constraint firstItem="B3x-La-jhl" firstAttribute="centerX" secondItem="9Ij-mC-5Hs" secondAttribute="centerX" id="vx8-R1-vR4"/>
+                            <constraint firstItem="wk0-6s-dNh" firstAttribute="top" secondItem="OfC-8t-vUE" secondAttribute="bottom" constant="19" id="w4p-wW-UkN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="تنظیمات" id="a99-Fw-PVX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xWs-9W-nsJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044" y="760.56971514242889"/>
+        </scene>
+        <!--تنظیمات-->
+        <scene sceneID="yGf-OT-bUB">
+            <objects>
+                <navigationController id="m37-DD-vQA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="تنظیمات" image="settings" id="EM7-dF-jlH"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6zs-Wx-vzi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kOT-kb-Lcz" kind="relationship" relationship="rootViewController" id="NDX-Ew-vGd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NhU-I1-YqD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-535" y="762"/>
+        </scene>
         <!--یادداشت-->
         <scene sceneID="OtR-b9-Y1k">
             <objects>
@@ -321,7 +463,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="HHd-h9-Eth">
             <objects>
-                <tabBarController id="bXp-6x-Sff" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="BuyedController" id="bXp-6x-Sff" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ZKM-Tp-14b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -331,6 +473,7 @@
                     <connections>
                         <segue destination="792-HP-ZxA" kind="relationship" relationship="viewControllers" id="rne-Uq-RF9"/>
                         <segue destination="8X1-9u-hUJ" kind="relationship" relationship="viewControllers" id="ZIE-57-yaf"/>
+                        <segue destination="m37-DD-vQA" kind="relationship" relationship="viewControllers" id="wjw-qh-0dL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vav-8i-Q4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -340,7 +483,7 @@
         <!--Buy View Controller-->
         <scene sceneID="uoS-vR-oHV">
             <objects>
-                <viewController id="xOd-u9-1C2" customClass="BuyViewController" customModule="PeriodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BuyController" id="xOd-u9-1C2" customClass="BuyViewController" customModule="PeriodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bDi-i8-pHS"/>
                         <viewControllerLayoutGuide type="bottom" id="TWK-Ps-SkW"/>
@@ -349,23 +492,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ytu-Rz-23h">
+                                <rect key="frame" x="21" y="223" width="333" height="46"/>
+                                <color key="backgroundColor" red="0.24705882352941178" green="0.31764705882352939" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="HWp-Wm-a69"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لایسنسی بروی دستگاه شما یافت نشد" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vD1-wo-gig">
-                                <rect key="frame" x="36" y="88" width="303" height="29"/>
+                                <rect key="frame" x="21" y="232" width="333" height="29"/>
                                 <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pi9-B3-8Xu">
-                                <rect key="frame" x="139" y="153" width="97" height="41"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEx-5P-vZj">
+                                <rect key="frame" x="21" y="269" width="333" height="250"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Period tracker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OSa-ev-HjS">
+                                        <rect key="frame" x="108" y="13.5" width="116" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="116" id="UJM-LO-eE6"/>
+                                            <constraint firstAttribute="height" constant="20.5" id="fMa-lJ-hIZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.96470588235294119" green="0.44705882352941173" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uK-ON-dXc">
+                                        <rect key="frame" x="230" y="222" width="88" height="28"/>
+                                        <fontDescription key="fontDescription" name="IRANSansFaNum-UltraLight" family="IRANSans(FaNum)" pointSize="9"/>
+                                        <state key="normal" title="ارتباط با ما از طریق تلگرام"/>
+                                        <connections>
+                                            <action selector="connectToSupport:" destination="xOd-u9-1C2" eventType="touchUpInside" id="a2z-HD-Ry5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4r6-tP-CK7">
+                                        <rect key="frame" x="15" y="222" width="84" height="28"/>
+                                        <fontDescription key="fontDescription" name="IRANSansFaNum-UltraLight" family="IRANSans(FaNum)" pointSize="9"/>
+                                        <state key="normal" title="ارسال دوباره کد به ایمیل"/>
+                                        <connections>
+                                            <action selector="resendCode:" destination="xOd-u9-1C2" eventType="touchUpInside" id="C2T-kw-xvr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="YIf-yz-9yd"/>
-                                    <constraint firstAttribute="height" constant="41" id="gIO-hv-I7d"/>
+                                    <constraint firstAttribute="height" constant="250" id="3wr-Rh-7Rg"/>
+                                    <constraint firstItem="4r6-tP-CK7" firstAttribute="leading" secondItem="mEx-5P-vZj" secondAttribute="leading" constant="15" id="DEi-wA-JxK"/>
+                                    <constraint firstAttribute="bottom" secondItem="4r6-tP-CK7" secondAttribute="bottom" id="O4p-Kn-OJd"/>
+                                    <constraint firstItem="OSa-ev-HjS" firstAttribute="centerX" secondItem="mEx-5P-vZj" secondAttribute="centerX" id="Rxu-AY-Awd"/>
+                                    <constraint firstAttribute="trailing" secondItem="4uK-ON-dXc" secondAttribute="trailing" constant="15" id="W0w-d9-GA9"/>
+                                    <constraint firstAttribute="bottom" secondItem="4uK-ON-dXc" secondAttribute="bottom" id="Y8S-T4-gdS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="17"/>
-                                <state key="normal" title="ورود"/>
-                            </button>
+                            </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4do-Gc-yZu">
                                 <rect key="frame" x="60" y="318" width="256" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.97254901960784312" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="Ew2-0y-DUe"/>
                                     <constraint firstAttribute="height" constant="30" id="gnm-x9-vDO"/>
@@ -376,6 +558,7 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wJo-lG-rks">
                                 <rect key="frame" x="60" y="364" width="256" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.97254901960784312" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="Rmp-dN-EIj"/>
                                     <constraint firstAttribute="height" constant="30" id="fC0-Kl-fbG"/>
@@ -385,36 +568,60 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uiz-9a-oLk">
-                                <rect key="frame" x="164" y="417" width="46" height="30"/>
+                                <rect key="frame" x="137" y="417" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.33333333333333331" green="0.54509803921568623" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="6Vk-FK-pH1"/>
+                                    <constraint firstAttribute="width" constant="100" id="6Vk-FK-pH1"/>
                                     <constraint firstAttribute="height" constant="30" id="QD8-mD-XTX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="17"/>
-                                <state key="normal" title="خرید"/>
+                                <state key="normal" title="خرید">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="buyApp:" destination="xOd-u9-1C2" eventType="touchUpInside" id="wbX-6i-4e9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pi9-B3-8Xu">
+                                <rect key="frame" x="112.5" y="451" width="150" height="31"/>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum-Light" family="IRANSans(FaNum)" pointSize="11"/>
+                                <state key="normal" title="اگر کدی دریافت کرده اید وارد شوید"/>
+                                <connections>
+                                    <action selector="toggleAction:" destination="xOd-u9-1C2" eventType="touchUpInside" id="ZBa-8h-ZzD"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Pi9-B3-8Xu" firstAttribute="centerX" secondItem="fH3-Mc-zQj" secondAttribute="centerX" id="2x8-EB-LJN"/>
+                            <constraint firstItem="mEx-5P-vZj" firstAttribute="centerX" secondItem="fH3-Mc-zQj" secondAttribute="centerX" id="2ab-cS-txp"/>
+                            <constraint firstItem="Pi9-B3-8Xu" firstAttribute="centerX" secondItem="fH3-Mc-zQj" secondAttribute="centerX" id="4Kc-bd-pqH"/>
+                            <constraint firstItem="ytu-Rz-23h" firstAttribute="centerX" secondItem="fH3-Mc-zQj" secondAttribute="centerX" id="4Ku-48-egt"/>
+                            <constraint firstItem="Pi9-B3-8Xu" firstAttribute="top" secondItem="Uiz-9a-oLk" secondAttribute="bottom" constant="4" id="9WQ-cO-pIH"/>
                             <constraint firstItem="wJo-lG-rks" firstAttribute="top" secondItem="4do-Gc-yZu" secondAttribute="bottom" constant="16" id="DSH-dL-lt4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vD1-wo-gig" secondAttribute="trailing" constant="20" id="L04-FJ-qt2"/>
+                            <constraint firstItem="vD1-wo-gig" firstAttribute="width" secondItem="mEx-5P-vZj" secondAttribute="width" id="F96-FC-cas"/>
+                            <constraint firstItem="mEx-5P-vZj" firstAttribute="top" secondItem="vD1-wo-gig" secondAttribute="bottom" constant="8" id="FgH-4f-f0J"/>
+                            <constraint firstItem="mEx-5P-vZj" firstAttribute="top" secondItem="vD1-wo-gig" secondAttribute="bottom" constant="8" id="Nnd-Vt-Z9j"/>
+                            <constraint firstItem="ytu-Rz-23h" firstAttribute="width" secondItem="mEx-5P-vZj" secondAttribute="width" id="Ojs-6T-ikL"/>
                             <constraint firstItem="Uiz-9a-oLk" firstAttribute="top" secondItem="wJo-lG-rks" secondAttribute="bottom" constant="23" id="PHM-i6-aLv"/>
                             <constraint firstItem="Uiz-9a-oLk" firstAttribute="centerX" secondItem="fH3-Mc-zQj" secondAttribute="centerX" id="Tsn-je-rHr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mEx-5P-vZj" secondAttribute="trailing" constant="5" id="Wzs-q4-fEY"/>
                             <constraint firstItem="4do-Gc-yZu" firstAttribute="centerY" secondItem="fH3-Mc-zQj" secondAttribute="centerY" id="YDC-LB-cUb"/>
-                            <constraint firstItem="vD1-wo-gig" firstAttribute="leading" secondItem="fH3-Mc-zQj" secondAttribute="leadingMargin" constant="20" id="aEX-Rk-Dq3"/>
+                            <constraint firstItem="mEx-5P-vZj" firstAttribute="centerX" secondItem="fH3-Mc-zQj" secondAttribute="centerX" id="cNi-wa-QcF"/>
                             <constraint firstItem="4do-Gc-yZu" firstAttribute="centerX" secondItem="fH3-Mc-zQj" secondAttribute="centerX" id="ccH-0c-pyR"/>
-                            <constraint firstItem="Pi9-B3-8Xu" firstAttribute="top" secondItem="vD1-wo-gig" secondAttribute="bottom" constant="36" id="dRa-zM-ogi"/>
                             <constraint firstItem="wJo-lG-rks" firstAttribute="centerX" secondItem="fH3-Mc-zQj" secondAttribute="centerX" id="e9D-88-NPh"/>
-                            <constraint firstItem="vD1-wo-gig" firstAttribute="top" secondItem="bDi-i8-pHS" secondAttribute="bottom" constant="68" id="tw6-Yz-Qct"/>
+                            <constraint firstItem="mEx-5P-vZj" firstAttribute="top" secondItem="ytu-Rz-23h" secondAttribute="bottom" id="fk6-UB-daA"/>
+                            <constraint firstItem="mEx-5P-vZj" firstAttribute="leading" secondItem="fH3-Mc-zQj" secondAttribute="leadingMargin" constant="5" id="jCZ-O7-ScU"/>
+                            <constraint firstItem="mEx-5P-vZj" firstAttribute="top" secondItem="4do-Gc-yZu" secondAttribute="bottom" constant="-79" id="qN9-ot-WHm"/>
+                            <constraint firstItem="vD1-wo-gig" firstAttribute="centerX" secondItem="fH3-Mc-zQj" secondAttribute="centerX" id="rJi-o2-poH"/>
+                            <constraint firstItem="4do-Gc-yZu" firstAttribute="top" secondItem="OSa-ev-HjS" secondAttribute="bottom" constant="15" id="w87-TT-yJA"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="actionBgView" destination="mEx-5P-vZj" id="dEy-jD-yAA"/>
+                        <outlet property="actionBtn" destination="Uiz-9a-oLk" id="ZVm-fE-3J8"/>
                         <outlet property="codeTextField" destination="wJo-lG-rks" id="jBl-NO-pdl"/>
                         <outlet property="emailTextField" destination="4do-Gc-yZu" id="Faz-Cm-LHQ"/>
+                        <outlet property="headerBgView" destination="ytu-Rz-23h" id="7OW-fs-76V"/>
+                        <outlet property="toggleBtn" destination="Pi9-B3-8Xu" id="OjU-Tx-nqu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMh-SB-SC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -465,6 +672,8 @@
     <resources>
         <image name="calendar" width="16" height="16"/>
         <image name="cycle" width="16" height="16"/>
+        <image name="mahdiyar" width="662" height="662"/>
         <image name="note" width="32" height="32"/>
+        <image name="settings" width="16" height="16"/>
     </resources>
 </document>

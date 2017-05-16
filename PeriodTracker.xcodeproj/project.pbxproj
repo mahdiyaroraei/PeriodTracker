@@ -19,6 +19,7 @@
 		558BC9171EBAE610000D66FF /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 558BC9141EBAE610000D66FF /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		558BC9181EBAE610000D66FF /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558BC9151EBAE610000D66FF /* RealmSwift.framework */; };
 		558BC9191EBAE610000D66FF /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 558BC9151EBAE610000D66FF /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		558D0A6A1ECADCD2007BC352 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D0A691ECADCD2007BC352 /* SettingViewController.swift */; };
 		55A487F81EBF5E4600D1A122 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A487F71EBF5E4600D1A122 /* Utility.swift */; };
 		55C17D031E7C728300B844F2 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C17D021E7C728300B844F2 /* ImagesViewController.swift */; };
 		55CF92FF1E771B7800BC772B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF92FE1E771B7800BC772B /* AppDelegate.swift */; };
@@ -63,6 +64,7 @@
 		558BC90D1EBAE1B0000D66FF /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/Period_Tracker-dpgnhbomjqhthchaemwlmguskqhn/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		558BC9141EBAE610000D66FF /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		558BC9151EBAE610000D66FF /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		558D0A691ECADCD2007BC352 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		55A487F71EBF5E4600D1A122 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		55C17D021E7C728300B844F2 /* ImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
 		55CF92FB1E771B7800BC772B /* PeriodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeriodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +143,7 @@
 				55D1EC981E864C5D005C1CA3 /* CircleViewController.swift */,
 				555BF6701EB78CBF0035A9BD /* LogPeriodViewController.swift */,
 				550CC20D1EC89D0C00CD5154 /* BuyViewController.swift */,
+				558D0A691ECADCD2007BC352 /* SettingViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				550CC20E1EC89D0C00CD5154 /* BuyViewController.swift in Sources */,
 				55CF92FF1E771B7800BC772B /* AppDelegate.swift in Sources */,
 				55D1EC991E864C5D005C1CA3 /* CircleViewController.swift in Sources */,
+				558D0A6A1ECADCD2007BC352 /* SettingViewController.swift in Sources */,
 				55A487F81EBF5E4600D1A122 /* Utility.swift in Sources */,
 				55F839321E7D40D600A390A4 /* DayViewCell.swift in Sources */,
 				55DDE36B1EBB52F000A15A98 /* PeriodDateModel.swift in Sources */,
