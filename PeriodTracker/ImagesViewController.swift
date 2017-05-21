@@ -301,6 +301,7 @@ UIPickerViewDelegate , UIPickerViewDataSource{
         pickerView?.delegate = self
         pickerView?.dataSource = self
         pickerView?.frame.size.height = self.view.frame.height
+        pickerView?.frame.size.width = self.view.frame.width
         pickerView?.center = self.view.center
         navItem.title = "طول مدت پریودی"
         self.view.addSubview(pickerView!)
@@ -408,7 +409,7 @@ UIPickerViewDelegate , UIPickerViewDataSource{
                         detailLayer.fillColor = Utility.uicolorFromHex(rgbValue: 0xE57373).cgColor
                         cell.layer.addSublayer(detailLayer)
                     }else if difference < periodDistance - 7{
-                        if difference > periodDistance / 2 - 3 && difference < periodDistance / 2 + 3{
+                        if difference >= periodDistance - 16 && difference <= periodDistance - 12{
                             detailLayer.fillColor = Utility.uicolorFromHex(rgbValue: 0x0097A7).cgColor
                             cell.layer.addSublayer(detailLayer)
                         }

@@ -83,7 +83,7 @@ class BuyViewController: UIViewController {
         ]
         
         showActivityIndicator(uiView: self.view)
-        Alamofire.request("http://172.20.10.2/license/public/resendcode", method: .post, parameters: parameters).responseJSON{ response in
+        Alamofire.request("\(Config.WEB_DOMAIN)/license/public/resendcode", method: .post, parameters: parameters).responseJSON{ response in
             
             self.hideActivityIndicator(uiView: self.view)
             if let JSON = response.result.value as? [String: Any] {
@@ -136,9 +136,28 @@ class BuyViewController: UIViewController {
             let popTip = PopTip()
             popTip.font = UIFont(name: "IRANSans(FaNum)", size: 14)!
             popTip.show(text: "لطفا کد خود را وارد کنید", direction: .up, maxWidth: 200, in: self.view, from: self.codeTextField.frame, duration: 3)
+            
+            return false
+        }else {
+            if !isValidEmail(testStr: emailTextField.text!) {
+                
+                let popTip = PopTip()
+                popTip.font = UIFont(name: "IRANSans(FaNum)", size: 14)!
+                popTip.show(text: "لطفا ایمیل معتبر وارد کنید", direction: .up, maxWidth: 200, in: self.view, from: self.emailTextField.frame, duration: 3)
+                
+                return false
+            }
         }
         
         return true
+    }
+    
+    func isValidEmail(testStr:String) -> Bool {
+        // print("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
     }
     
     @IBAction func buyApp(_ sender: Any) {
@@ -152,12 +171,12 @@ class BuyViewController: UIViewController {
             ]
             
             showActivityIndicator(uiView: self.view)
-            Alamofire.request("http://172.20.10.2/license/public/buy", method: .post, parameters: parameters).responseJSON{ response in
+            Alamofire.request("\(Config.WEB_DOMAIN)/license/public/buy", method: .post, parameters: parameters).responseJSON{ response in
                 
                 if let JSON = response.result.value as? [String: Any] {
                     print("JSON: \(JSON)")
                     self.hideActivityIndicator(uiView: self.view)
-                    let url = URL(string: "http://172.20.10.2/license/public/pay/\(JSON["license_id"]!)")!
+                    let url = URL(string: "\(Config.WEB_DOMAIN)/license/public/pay/\(JSON["license_id"]!)")!
                     if #available(iOS 10.0, *) {
                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     } else {
@@ -174,7 +193,7 @@ class BuyViewController: UIViewController {
                 "app": "period_tracker"
             ]
             showActivityIndicator(uiView: self.view)
-            Alamofire.request("http://172.20.10.2/license/public/activation", method: .post, parameters: parameters).responseJSON{ response in
+            Alamofire.request("\(Config.WEB_DOMAIN)/license/public/activation", method: .post, parameters: parameters).responseJSON{ response in
                 
                 self.hideActivityIndicator(uiView: self.view)
                 if let JSON = response.result.value as? [String: Any] {
@@ -186,6 +205,8 @@ class BuyViewController: UIViewController {
                         keychain.set(true, forKey: "buy")
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let destinationVC = storyboard.instantiateViewController(withIdentifier: "BuyedController")
+                        
+                        (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = destinationVC
                         
                         self.present(destinationVC, animated: true, completion: nil)
                     }else if JSON["success"] as! Int == 0{

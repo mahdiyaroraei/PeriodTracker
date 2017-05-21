@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Gecco.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KeychainSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,7 +42,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>29AFB922CA4FB57573E98BBCC7BFD03A</key>
+		<key>044D24CD957C7BD215506693AF4433A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0472C1E0F9EDF9D6F9A5A615FA7DCDC1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,12 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4DCE4EE761F61B36C32443A46A5CD844</key>
+		<key>3A04690B98045C27FA3A8B48EB0961ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>77326CBEB7A2A0D0D7254E785F5B8872</key>
+		<key>61B5531DA57E04D28800A3717BE80599</key>
 		<dict>
 			<key>primary</key>
 			<true/>

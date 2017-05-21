@@ -24,7 +24,7 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func telegramChannel(_ sender: Any) {
-        let botURL = URL.init(string: "tg://resolve?domain=codemo_channel")
+        let botURL = URL.init(string: "tg://resolve?domain=codemo")
         
         if UIApplication.shared.canOpenURL(botURL!) {
             UIApplication.shared.openURL(botURL!)
@@ -52,7 +52,7 @@ class SettingViewController: UIViewController {
         ]
         
         showActivityIndicator(uiView: self.view)
-        Alamofire.request("http://172.20.10.2/license/public/deactive", method: .post, parameters: parameters).responseJSON{ response in
+        Alamofire.request("\(Config.WEB_DOMAIN)/license/public/deactive", method: .post, parameters: parameters).responseJSON{ response in
             
             if let JSON = response.result.value as? [String: Any] {
                 print("JSON: \(JSON)")

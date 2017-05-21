@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import KeychainSwift
 
 @UIApplicationMain
@@ -29,6 +30,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         navigationBarAppearace.tintColor = UIColor.white
         navigationBarAppearace.barTintColor = uicolorFromHex(rgbValue: 0x23272F)
+        
+        
+        let parameters: Parameters = [
+            "name": "period_tracker"
+        ]
+        
+        Alamofire.request("\(Config.WEB_DOMAIN)/license/public/checkupdate", method: .post, parameters: parameters).responseJSON{ response in
+            
+            if let JSON = response.result.value as? [String: Any] {
+                print("JSON: \(JSON)")
+                
+                let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+                
+                if Float(JSON["version"]! as! String)! > 0.0 && Float(JSON["version"]! as! String)! > Float(version!)!{
+                    let attributedString = NSAttributedString(string: "نسخه جدید", attributes: [
+                        NSFontAttributeName : UIFont(name: "IRANSans(FaNum)", size: 17)
+                        ])
+                    
+                    let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.alert)
+                    
+                    alert.setValue(attributedString, forKey: "attributedTitle")
+                    alert.setValue(NSAttributedString(string: "نسخه جدید برنامه را دانلود کنید و از ویژگی های جدید آن استفاده کنید", attributes: [
+                        NSFontAttributeName : UIFont(name: "IRANSans(FaNum)", size: 13)
+                        ])
+                        , forKey: "attributedMessage")
+                    
+                    alert.addAction(UIAlertAction(title: "بله", style: UIAlertActionStyle.default, handler: {action in self.downloadUpdate(JSON["link"] as! String)}))
+                    alert.addAction(UIAlertAction(title: "خیر", style: UIAlertActionStyle.cancel, handler: nil))
+                    self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+
+                }
+            }
+        }
 
         
         // change navigation item title color
@@ -48,6 +82,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+    func downloadUpdate(_ link:String) {
+        
+        let botURL = URL.init(string: link)
+        
+        if UIApplication.shared.canOpenURL(botURL!) {
+            UIApplication.shared.openURL(botURL!)
+        }
     }
     
     func uicolorFromHex(rgbValue:UInt32)->UIColor{

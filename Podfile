@@ -9,6 +9,7 @@ pod ‘Alamofire’
 pod 'RealmSwift'
 pod 'AMPopTip'
 pod 'KeychainSwift', '~> 8.0'
+pod 'Gecco'
 
 
 # Pods for Test

@@ -46,7 +46,15 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
         
         if periodDistance == 0 {
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
-            let tabBarController: UITabBarController = (appDelegate!.window!.rootViewController as? UITabBarController)!
+            let tabBarController: UITabBarController
+            
+            if appDelegate!.window!.rootViewController is BuyViewController {
+                
+                tabBarController = (appDelegate!.window!.rootViewController?.childViewControllers[0] as? UITabBarController)!
+            }else{
+                try! tabBarController = (appDelegate!.window!.rootViewController as? UITabBarController)!
+            }
+        
             tabBarController.selectedIndex = 0
             
             let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
@@ -228,7 +236,7 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
         let centerPoint:CGPoint = view.center
         let radius = CGFloat(view.frame.size.width / 2 - 35)
         
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: centerPoint.x,y: centerPoint.y), radius: radius, startAngle: CGFloat(M_PI * 0.3), endAngle:CGFloat(M_PI * 0.7), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: centerPoint.x,y: centerPoint.y), radius: radius, startAngle: CGFloat(Double(M_PI * 1.5) - 16 * angelUnit!), endAngle:CGFloat(Double(M_PI * 1.5) - 12 * angelUnit!), clockwise: true)
         
         fertileLayer.path = circlePath.cgPath
         fertileLayer.fillColor = UIColor.clear.cgColor
