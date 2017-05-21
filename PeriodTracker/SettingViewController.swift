@@ -32,6 +32,23 @@ class SettingViewController: UIViewController {
             
         }
     }
+    
+    @IBAction func showTutorial(_ sender: Any) {
+        
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let tabBarController: UITabBarController
+        
+        if appDelegate!.window!.rootViewController is BuyViewController {
+            
+            tabBarController = (appDelegate!.window!.rootViewController?.childViewControllers[0] as? UITabBarController)!
+        }else{
+            try! tabBarController = (appDelegate!.window!.rootViewController as? UITabBarController)!
+        }
+        
+        tabBarController.selectedIndex = 0
+        
+        appDelegate?.showTutorials()
+    }
 
     @IBAction func telegramSupport(_ sender: Any) {
         let botURL = URL.init(string: "tg://resolve?domain=mahdiyar_oraei")

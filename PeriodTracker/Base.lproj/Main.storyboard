@@ -334,7 +334,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wk0-6s-dNh">
-                                <rect key="frame" x="110" y="415" width="156" height="30"/>
+                                <rect key="frame" x="110" y="399" width="156" height="30"/>
                                 <color key="backgroundColor" red="0.33353583650000002" green="0.60178635219999999" blue="0.76857947339999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="JYQ-44-eGC"/>
@@ -348,9 +348,25 @@
                                     <action selector="telegramSupport:" destination="kOT-kb-Lcz" eventType="touchUpInside" id="FsW-hJ-9pc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psh-0Y-anP">
+                                <rect key="frame" x="110" y="432" width="156" height="30"/>
+                                <color key="backgroundColor" red="0.33353583650000002" green="0.60178635219999999" blue="0.76857947339999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Wh1-bN-ckk"/>
+                                    <constraint firstAttribute="width" constant="156" id="ZuK-BS-OYM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="13"/>
+                                <state key="normal" title="نمایش آموزش برنامه">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showTutorial:" destination="kOT-kb-Lcz" eventType="touchUpInside" id="4dX-qu-nUq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490196078433" green="0.15294117647058825" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="psh-0Y-anP" firstAttribute="top" secondItem="wk0-6s-dNh" secondAttribute="bottom" constant="3" id="03v-rK-In1"/>
                             <constraint firstItem="Egd-aD-X9w" firstAttribute="top" secondItem="i4J-t4-sLX" secondAttribute="bottom" constant="17" id="4fz-1n-ZtY"/>
                             <constraint firstItem="i4J-t4-sLX" firstAttribute="centerX" secondItem="9Ij-mC-5Hs" secondAttribute="centerX" id="72C-et-ED0"/>
                             <constraint firstItem="ryg-Sy-ChF" firstAttribute="centerX" secondItem="9Ij-mC-5Hs" secondAttribute="centerX" id="7uC-xu-NHJ"/>
@@ -359,12 +375,13 @@
                             <constraint firstItem="bDX-7Q-v97" firstAttribute="centerX" secondItem="9Ij-mC-5Hs" secondAttribute="centerX" id="I25-eT-LJe"/>
                             <constraint firstItem="B3x-La-jhl" firstAttribute="centerY" secondItem="9Ij-mC-5Hs" secondAttribute="centerY" id="Kfm-Sl-ZUA"/>
                             <constraint firstItem="bDX-7Q-v97" firstAttribute="top" secondItem="ryg-Sy-ChF" secondAttribute="bottom" constant="8" id="Qo2-g6-15Y"/>
+                            <constraint firstItem="psh-0Y-anP" firstAttribute="centerX" secondItem="9Ij-mC-5Hs" secondAttribute="centerX" id="TP0-kh-1oF"/>
                             <constraint firstItem="OfC-8t-vUE" firstAttribute="top" secondItem="B3x-La-jhl" secondAttribute="bottom" constant="8" id="cwL-iR-VZa"/>
                             <constraint firstItem="wk0-6s-dNh" firstAttribute="centerX" secondItem="9Ij-mC-5Hs" secondAttribute="centerX" id="eLY-A4-5Xo"/>
                             <constraint firstItem="OfC-8t-vUE" firstAttribute="centerX" secondItem="9Ij-mC-5Hs" secondAttribute="centerX" id="fDd-Nu-cZg"/>
                             <constraint firstItem="ryg-Sy-ChF" firstAttribute="top" secondItem="a1O-lN-U6Z" secondAttribute="bottom" constant="18" id="gFE-eG-MYS"/>
                             <constraint firstItem="B3x-La-jhl" firstAttribute="centerX" secondItem="9Ij-mC-5Hs" secondAttribute="centerX" id="vx8-R1-vR4"/>
-                            <constraint firstItem="wk0-6s-dNh" firstAttribute="top" secondItem="OfC-8t-vUE" secondAttribute="bottom" constant="19" id="w4p-wW-UkN"/>
+                            <constraint firstItem="wk0-6s-dNh" firstAttribute="top" secondItem="OfC-8t-vUE" secondAttribute="bottom" constant="3" id="w4p-wW-UkN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="تنظیمات" id="a99-Fw-PVX"/>

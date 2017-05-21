@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import Gecco
 import Alamofire
 import KeychainSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate , SpotlightViewControllerDelegate {
 
     var window: UIWindow?
+    
+    var spotlightView : SpotlightView! = nil
+    var spotlightViewController : SpotlightViewController! = nil
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -30,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         navigationBarAppearace.tintColor = UIColor.white
         navigationBarAppearace.barTintColor = uicolorFromHex(rgbValue: 0x23272F)
-        
         
         let parameters: Parameters = [
             "name": "period_tracker"
@@ -81,7 +84,87 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
         }
         
+        if UserDefaults.standard.bool(forKey: "tut") {
+            showTutorials()
+        }
+        
         return true
+    }
+    
+    var noteLabel : UILabel! = nil
+    func showTutorials() {
+        stepIndex = 0
+        spotlightViewController = SpotlightViewController()
+        self.spotlightView = spotlightViewController.spotlightView
+        
+        
+        spotlightViewController.delegate = self
+        
+        self.window!.rootViewController?.present(spotlightViewController, animated: true, completion: nil)
+        
+        
+        let screenSize = UIScreen.main.bounds.size
+        
+        noteLabel = UILabel(frame: CGRect(x: 0, y: 90, width: screenSize.width , height: 100))
+        noteLabel.textAlignment = .center
+        noteLabel.text = "Testing...123"
+        noteLabel.numberOfLines = 5
+        noteLabel.font = UIFont(name: "IRANSans(FaNum)", size: 13)
+        noteLabel.backgroundColor = UIColorFromHex(rgbValue: 0x000000, alpha: 0.8)
+        noteLabel.textColor = UIColor.white
+        
+        spotlightViewController.view.addSubview(noteLabel)
+        
+    }
+    
+    func UIColorFromHex(rgbValue:UInt32, alpha:Double=1.0)->UIColor {
+        let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
+        let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
+        let blue = CGFloat(rgbValue & 0xFF)/256.0
+        return UIColor(red:red, green:green, blue:blue, alpha:CGFloat(alpha))
+    }
+    
+    var stepIndex: Int = 0
+    let notes : [String] = ["برای پیشبینی زمان پریودی شما در آینده ابتدا روز اول آخرین پریودیتان را از روی تقویم انتخاب کنید!"
+        , "برای ثبت یادداشت بعد از وارد کردن اطلاعات پریودیتان روی روز مورد نظر از روی تقویم کلیک کنید"
+        , "بخش مهم دیگر این برنامه برای ثبت و پریودی های گذشته شما است به این منظور بروی این دکمه کلیک کنید و سپس روز های مورد نظر را انتخاب کنید"
+        , "برای تنظیم دوباره اطلاعات پریودیتان روی این دکمه کلیک کنید"
+    ,""]
+    
+    func next(_ labelAnimated: Bool) {
+        
+        noteLabel.text = notes[stepIndex]
+        
+        let screenSize = UIScreen.main.bounds.size
+        switch stepIndex {
+        case 0:
+            spotlightView.appear(Spotlight.RoundedRect(center: CGPoint(x: screenSize.width / 2, y: screenSize.height / 2 + 45), size: CGSize(width: screenSize.width - 10 , height: screenSize.height / 2 - 15), cornerRadius: 6))
+        case 1:
+            spotlightView.move(Spotlight.Oval(center: CGPoint(x: screenSize.width / 2 , y: screenSize.height / 2 + 10) , diameter: 50))
+        case 2:
+            spotlightView.move(Spotlight.RoundedRect(center: CGPoint(x: 46, y: screenSize.height - 75), size: CGSize(width: 90, height: 35), cornerRadius: 6), moveType: .disappear)
+        case 3:
+            spotlightView.move(Spotlight.RoundedRect(center: CGPoint(x: screenSize.width - 46 , y: screenSize.height - 75), size: CGSize(width: 90, height: 35), cornerRadius: 6), moveType: .disappear)
+        case 4:
+            UserDefaults.standard.set(false, forKey: "tut")
+            spotlightViewController.dismiss(animated: true, completion: nil)
+        default:
+            break
+        }
+        
+        stepIndex += 1
+    }
+    
+    func spotlightViewControllerWillPresent(_ viewController: SpotlightViewController, animated: Bool) {
+        next(false)
+    }
+    
+    func spotlightViewControllerTapped(_ viewController: SpotlightViewController, isInsideSpotlight: Bool) {
+        next(true)
+    }
+    
+    func spotlightViewControllerWillDismiss(_ viewController: SpotlightViewController, animated: Bool) {
+        spotlightView.disappear()
     }
     
     func downloadUpdate(_ link:String) {
