@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.4.0)
   - AMPopTip (2.0.1)
   - Gecco (1.0.0)
+  - Intro (0.1.0)
   - KeychainSwift (8.0.2)
   - Realm (2.6.2):
     - Realm/Headers (= 2.6.2)
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - Alamofire
   - AMPopTip
   - Gecco
+  - Intro
   - KeychainSwift (~> 8.0)
   - RealmSwift
 
@@ -20,10 +22,11 @@ SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AMPopTip: 61c890837164f5f69190a1e3025f06e65c88c91a
   Gecco: e662f949821e742997787bad7b730ccc0052e43c
+  Intro: cd665096c67bf7082bf45e88eae09d6bec8f34f9
   KeychainSwift: 213db04dfe7244988e61f77c72a2afb2f775954a
   Realm: 29222766425b9f831228f81b63f0e38a97a4d700
   RealmSwift: d161a80f96cb91ae88391a7d5a9cf08024a7bc8e
 
-PODFILE CHECKSUM: 27338df761a3cb41a2bcfb7568eb7e2b4efc8d1e
+PODFILE CHECKSUM: 6a3e4c5ff377abfe4e267f0c39d7cb7c6ea0e8d4
 
 COCOAPODS: 1.2.0

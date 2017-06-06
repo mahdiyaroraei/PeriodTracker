@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Intro
 import Alamofire
 import AMPopTip
 import RealmSwift
 import KeychainSwift
 
 class BuyViewController: UIViewController {
-
+    
+    var showIntro = true
     var isBuyMode = true;
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var codeTextField: UITextField!
@@ -39,7 +41,7 @@ class BuyViewController: UIViewController {
         
         codeTextField.isEnabled = false
         codeTextField.backgroundColor = Utility.uicolorFromHex(rgbValue: 0xEEEEEE)
-    
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
@@ -65,7 +67,7 @@ class BuyViewController: UIViewController {
         mask.path = path.cgPath
         actionBgView.layer.mask = mask
     }
-
+    
     @IBAction func resendCode(_ sender: Any) {
         
         if (emailTextField.text?.isEmpty)! {
@@ -100,6 +102,35 @@ class BuyViewController: UIViewController {
                     popTip.show(text: "خریدی با این ایمیل ثبت نشده است. در صورت لزوم با پشتیبانی تماس برقرار کنید", direction: .up, maxWidth: 200, in: self.view, from: self.emailTextField.frame, duration: 3)
                 }
             }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if showIntro {
+            let vc = IntroViewController()
+            vc.items = [
+                ("برنامه تخصصی برای بانوان ایرانی \n برای بازدید از محیط برنامه به سمت راست بروید", UIImage(named: "p1")),
+                ("دوران پریودی خود را حرفه ای مدیریت کنید", UIImage(named: "p2")),
+                ("تقویم شمسی و ثبت یادداشت", UIImage(named: "p3")),
+                ("", UIImage(named: "p4"))
+            ]
+            vc.animationType = .rotate
+            vc.titleColor = Utility.uicolorFromHex(rgbValue: 0xFAFAFA)
+            vc.titleFont = UIFont(name: "IRANSans(FaNum)", size: 17)!
+            vc.imageContentMode = .scaleAspectFit
+            vc.closeTitle = "ورود با کد / خرید برنامه"
+            vc.closeColor = .white
+            vc.closeBackgroundColor = Utility.uicolorFromHex(rgbValue: 0x1A237E)
+            vc.closeBorderWidth = 0
+            vc.closeBorderColor = UIColor.black.cgColor
+            vc.closeCornerRadius = 2
+            vc.didClose = {
+                //            vc.showButton.setTitle("Show again", for: .normal)
+            }
+            present(vc, animated: true, completion: nil)
+            showIntro = false
         }
     }
     override func didReceiveMemoryWarning() {
@@ -184,7 +215,7 @@ class BuyViewController: UIViewController {
                     }
                 }
             }
-
+            
         }else{
             
             let parameters: Parameters = [
@@ -216,10 +247,10 @@ class BuyViewController: UIViewController {
                     }
                 }
             }
-
+            
         }
     }
-
+    
     @IBAction func connectToSupport(_ sender: Any) {
         let botURL = URL.init(string: "tg://resolve?domain=mahdiyar_oraei")
         
