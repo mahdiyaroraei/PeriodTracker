@@ -96,11 +96,12 @@ class CircleViewController: UIViewController , UIGestureRecognizerDelegate{
     }
     
     func setupDate() {
-        var difference = Calendar.current.dateComponents([.day], from: startPeriodDate, to: Date()).day ?? 0
+        let nowDate = Calendar.current.startOfDay(for: Date())
+        var difference = Calendar.current.dateComponents([.day], from: startPeriodDate, to: nowDate).day ?? 0
         
         difference = difference % periodDistance!
         
-        beginPeriodDate = Calendar.current.date(byAdding: .day, value: -difference, to: Date())
+        beginPeriodDate = Calendar.current.date(byAdding: .day, value: -difference, to: nowDate)
         
         dayLabel.isUserInteractionEnabled = true
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(

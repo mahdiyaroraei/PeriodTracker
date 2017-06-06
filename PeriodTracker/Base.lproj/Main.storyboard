@@ -26,7 +26,7 @@
         <!--Title-->
         <scene sceneID="eyW-lj-ts9">
             <objects>
-                <viewController id="h0F-Ht-hdm" customClass="ImagesViewController" customModule="PeriodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="calendarVC" id="h0F-Ht-hdm" customClass="ImagesViewController" customModule="PeriodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tzj-47-xBk"/>
                         <viewControllerLayoutGuide type="bottom" id="h8x-iq-qEg"/>
@@ -153,6 +153,12 @@
                                     <constraint firstItem="62B-PG-TzN" firstAttribute="height" secondItem="Z6Q-Jo-9Bw" secondAttribute="height" id="zeJ-ar-A9q"/>
                                 </constraints>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شروع آخرین دوره ماهیانه خود را در تقویم بالا انتخاب کنید" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEw-kQ-tqA">
+                                <rect key="frame" x="16" y="520" width="343" height="58"/>
+                                <fontDescription key="fontDescription" name="IRANSansFaNum-Bold" family="IRANSans(FaNum)" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.80000000000000004" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490196078433" green="0.15294117647058825" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -167,8 +173,11 @@
                             <constraint firstItem="h8x-iq-qEg" firstAttribute="top" secondItem="NNn-hO-BGH" secondAttribute="bottom" constant="7" id="Teh-uP-hje"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pij-3R-Gem" secondAttribute="trailing" constant="1" id="XL6-AU-rnH"/>
                             <constraint firstItem="NNn-hO-BGH" firstAttribute="top" secondItem="Pij-3R-Gem" secondAttribute="bottom" constant="20" id="YGy-St-54n"/>
+                            <constraint firstItem="h8x-iq-qEg" firstAttribute="top" secondItem="IEw-kQ-tqA" secondAttribute="bottom" constant="40" id="cdd-4O-F48"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bnp-by-C9i" secondAttribute="trailing" constant="47" id="ert-ME-cHc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IEw-kQ-tqA" secondAttribute="trailing" id="f52-yC-ZVT"/>
                             <constraint firstItem="LYe-Ie-eFM" firstAttribute="height" secondItem="NNn-hO-BGH" secondAttribute="height" id="ha0-fu-bAf"/>
+                            <constraint firstItem="IEw-kQ-tqA" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leadingMargin" id="juS-PJ-rOr"/>
                             <constraint firstItem="bnp-by-C9i" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leadingMargin" constant="46" id="kk9-Eu-KEX"/>
                             <constraint firstItem="Pij-3R-Gem" firstAttribute="leading" secondItem="3jL-ug-kJB" secondAttribute="leadingMargin" id="nRo-hf-L1t"/>
                             <constraint firstItem="Z8B-7P-fkz" firstAttribute="centerX" secondItem="3jL-ug-kJB" secondAttribute="centerX" constant="-0.5" id="oDZ-tf-GrT"/>
@@ -178,11 +187,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="ohy-aj-S58"/>
                     <connections>
+                        <outlet property="alertLabel" destination="IEw-kQ-tqA" id="ztD-lu-8eV"/>
                         <outlet property="collectionView" destination="Pij-3R-Gem" id="mxC-LI-gs4"/>
                         <outlet property="distanceLabel" destination="jrJ-L2-a07" id="fl7-Cx-7Wj"/>
                         <outlet property="lengthLabel" destination="Z6Q-Jo-9Bw" id="20R-U0-NL8"/>
                         <outlet property="navItem" destination="ohy-aj-S58" id="IYf-th-kdf"/>
                         <outlet property="periodDatesButton" destination="NNn-hO-BGH" id="ZIg-tf-Fon"/>
+                        <outlet property="resetSettingsLabel" destination="LYe-Ie-eFM" id="Saz-di-Zl0"/>
+                        <outlet property="setPeriodLabel" destination="NNn-hO-BGH" id="pyJ-X5-koR"/>
                         <outlet property="startLabel" destination="Z8B-7P-fkz" id="Ins-7d-2iD"/>
                     </connections>
                 </viewController>

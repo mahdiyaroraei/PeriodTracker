@@ -93,6 +93,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate , SpotlightViewControllerD
     
     var noteLabel : UILabel! = nil
     func showTutorials() {
+        ImagesViewController.tutState = true
+        
+        if ImagesViewController.instance != nil {
+            ImagesViewController.instance?.viewDidAppear(false)
+        }
+        
         stepIndex = 0
         spotlightViewController = SpotlightViewController()
         self.spotlightView = spotlightViewController.spotlightView
@@ -146,6 +152,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , SpotlightViewControllerD
         case 3:
             spotlightView.move(Spotlight.RoundedRect(center: CGPoint(x: screenSize.width - 46 , y: screenSize.height - 75), size: CGSize(width: 90, height: 35), cornerRadius: 6), moveType: .disappear)
         case 4:
+            ImagesViewController.tutState = false
             UserDefaults.standard.set(false, forKey: "tut")
             spotlightViewController.dismiss(animated: true, completion: nil)
         default:

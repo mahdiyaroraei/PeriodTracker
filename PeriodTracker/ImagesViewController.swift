@@ -12,6 +12,9 @@ import RealmSwift
 class ImagesViewController: UIViewController , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout , UICollectionViewDelegate,
 UIPickerViewDelegate , UIPickerViewDataSource{
     
+    public static var tutState = false
+    public static var instance : ImagesViewController? = nil
+    
     let realm = try! Realm()
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -60,6 +63,10 @@ UIPickerViewDelegate , UIPickerViewDataSource{
     var calendar : Calendar!
     var dayOfMonth = 0
     
+    @IBOutlet weak var alertLabel: UILabel!
+    @IBOutlet weak var setPeriodLabel: UIButton!
+    @IBOutlet weak var resetSettingsLabel: UIButton!
+    
     var pickerView : UIPickerView?
     
     enum SetupState {
@@ -72,6 +79,8 @@ UIPickerViewDelegate , UIPickerViewDataSource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ImagesViewController.instance = self
         
         checkSetupCompeleted()
         self.automaticallyAdjustsScrollViewInsets = false
@@ -93,6 +102,21 @@ UIPickerViewDelegate , UIPickerViewDataSource{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        let showAlert = UserDefaults.standard.integer(forKey: "SELECT_PERIOD_DISTANCE") == 0
+        
+        if !ImagesViewController.tutState {
+            
+            alertLabel.isHidden = !showAlert
+            resetSettingsLabel.isHidden = showAlert
+            setPeriodLabel.isHidden = showAlert
+        }else{
+            
+            alertLabel.isHidden = true
+            resetSettingsLabel.isHidden = false
+            setPeriodLabel.isHidden = false
+        }
+        
         
         dayOfMonth = 0
         collectionView.reloadData()
@@ -182,6 +206,7 @@ UIPickerViewDelegate , UIPickerViewDataSource{
             dayOfMonth = 0
             collectionView.reloadData()
             setupUserSavedData()
+            viewDidAppear(false)
             break
             
         default:
