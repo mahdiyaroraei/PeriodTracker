@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xOd-u9-1C2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xOd-u9-1C2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -207,7 +207,7 @@
             <objects>
                 <navigationController id="8X1-9u-hUJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="دوره" image="cycle" id="PEk-Q6-hjY"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="KRp-wt-wq0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KRp-wt-wq0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -407,7 +407,7 @@
             <objects>
                 <navigationController id="m37-DD-vQA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="تنظیمات" image="settings" id="EM7-dF-jlH"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6zs-Wx-vzi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6zs-Wx-vzi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -574,7 +574,7 @@
                                     <constraint firstAttribute="bottom" secondItem="4uK-ON-dXc" secondAttribute="bottom" id="Y8S-T4-gdS"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4do-Gc-yZu">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4do-Gc-yZu">
                                 <rect key="frame" x="60" y="318" width="256" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.97254901960784312" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -582,8 +582,7 @@
                                     <constraint firstAttribute="height" constant="30" id="gnm-x9-vDO"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wJo-lG-rks">
                                 <rect key="frame" x="60" y="364" width="256" height="30"/>
@@ -663,7 +662,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="792-HP-ZxA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="تقویم" image="calendar" id="o9k-Hx-9As"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gGQ-5J-q4n">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gGQ-5J-q4n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -684,7 +683,7 @@
             <objects>
                 <navigationController storyboardIdentifier="NewsDetailsVCID" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="atD-l6-myK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="baQ-iY-erP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="baQ-iY-erP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
