@@ -207,7 +207,7 @@
             <objects>
                 <navigationController id="8X1-9u-hUJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="دوره" image="cycle" id="PEk-Q6-hjY"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KRp-wt-wq0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="KRp-wt-wq0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -407,7 +407,7 @@
             <objects>
                 <navigationController id="m37-DD-vQA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="تنظیمات" image="settings" id="EM7-dF-jlH"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6zs-Wx-vzi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6zs-Wx-vzi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -582,6 +582,7 @@
                                     <constraint firstAttribute="height" constant="30" id="gnm-x9-vDO"/>
                                 </constraints>
                                 <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wJo-lG-rks">
@@ -662,7 +663,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="792-HP-ZxA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="تقویم" image="calendar" id="o9k-Hx-9As"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gGQ-5J-q4n">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gGQ-5J-q4n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -683,7 +684,7 @@
             <objects>
                 <navigationController storyboardIdentifier="NewsDetailsVCID" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="atD-l6-myK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="baQ-iY-erP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="baQ-iY-erP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
